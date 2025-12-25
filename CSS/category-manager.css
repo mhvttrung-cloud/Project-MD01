@@ -1,0 +1,19 @@
+#container {
+    display: flex;
+    align-items: center;
+}
+.menu-logo {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+}
+.menu-logo i {
+    transform: rotateY(180deg);
+    height: 24px;
+    width: 24px;
+}
+
+
+
+.menu-item {
+}

@@ -110,3 +110,17 @@ body {
     font-size: 16px;
     line-height: 24px;
 }
+
+
+@media screen and (max-width : 768px) {
+    .form-div-userName {
+        display: inline-block;
+        flex-direction: row;
+    }
+    .form-div-mobile input {
+        display: flex;
+        gap: 24px;
+        width: 480px;
+    }
+/* Lỗi ở phần tên không được khoảng cách trên và dưới là 24px được ! */
+}

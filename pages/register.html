@@ -17,39 +17,47 @@
         <form id="form" action="#" method="post">
 
             <div class="form-div-userName">
-                <div class="form-div">
+                <div class="form-div form-div-mobile">
                     <label class="form-div-lebal" for="Họ và tên">Họ và tên đệm</label>
-                    <input class="form-div-input" type="name">
+                    <input class="form-div-input form-mobile" type="name">
+                    <p class="message"></p>
                 </div>
-                <div class="form-div">
+                <div class="form-div form-div-mobile">
                     <label class="form-div-lebal" for="name">Tên</label>
-                    <input class="form-div-input" type="name">
+                    <input class="form-div-input form-div-inputName" type="name">
+                    <p class="message"></p>
                 </div>
             </div>
             <!--  -->
             <div class="form-div">
                 <label class="form-label" for="email">Email</label>
                 <input class="form-input" type="email" placeholder="you@gmail.com">
+                <p class="message"></p>
             </div>
 
             <div class="form-div">
                 <label class="form-label"  for="password">Password</label>
-                <input class="form-input" type="password">
+                <input class="form-input form-password" type="password">
+                    <p class="message"></p>
             </div>
 
             <div class="form-div">
                 <label class="form-label"  for="password">Xác nhận mật khẩu :</label>
-                <input class="form-input" type="password">
+                <input class="form-input confirmPassword" type="password">
+                    <p class="message"></p>
             </div>
             
             <div class="checkbox-span">
-                <input type="checkbox">
-                <span>Bạn đồng ý với <a class="onlick-href" href="#">chính sách và điều khoản</a></span>
+                <input class="check-box" onclick="handleCheckBox()" type="checkbox">
+                <span>Bạn đồng ý với <a class="onlick-href" href="#">chính sách và điều khoản</a>
+                </span>
+                <p class="message"></p>
             </div>
-            <button class="button">Đăng ký</button>
+            <button onclick="hanldRegister(event)" class="button">Đăng ký</button>
 
             <span class="acount-ques">Bạn đã có tài khoản? <a class="onlick-href" href="../pages/login.html">Đăng nhập</a></span>
         </form>
     </div>
+    <script src="../JS/register.js"></script>
 </body>
 </html>

@@ -3,11 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang đăng ký
-
-    </title>
+    <title>Trang đăng ký</title>
+    <link rel="stylesheet" href="../CSS/register.css">
 </head>
 <body>
-    <h1>Đăng ký</h1>
+
+    <div class="container">
+        <div id="register-text">
+            <h2>Đăng ký tài khoản</h2>
+            <p>Đăng ký tài khoản để sử dụng dịch vụ</p>
+        </div>
+<!-- Form input -->
+        <form id="form" action="#" method="post">
+
+            <div class="form-div-userName">
+                <div class="form-div">
+                    <label class="form-div-lebal" for="Họ và tên">Họ và tên đệm</label>
+                    <input class="form-div-input" type="name">
+                </div>
+                <div class="form-div">
+                    <label class="form-div-lebal" for="name">Tên</label>
+                    <input class="form-div-input" type="name">
+                </div>
+            </div>
+            <!--  -->
+            <div class="form-div">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" placeholder="you@gmail.com">
+            </div>
+
+            <div class="form-div">
+                <label class="form-label"  for="password">Password</label>
+                <input class="form-input" type="password">
+            </div>
+
+            <div class="form-div">
+                <label class="form-label"  for="password">Xác nhận mật khẩu :</label>
+                <input class="form-input" type="password">
+            </div>
+            
+            <div class="checkbox-span">
+                <input type="checkbox">
+                <span>Bạn đồng ý với <a class="onlick-href" href="#">chính sách và điều khoản</a></span>
+            </div>
+            <button class="button">Đăng ký</button>
+
+            <span class="acount-ques">Bạn đã có tài khoản? <a class="onlick-href" href="../pages/login.html">Đăng nhập</a></span>
+        </form>
+    </div>
 </body>
 </html>

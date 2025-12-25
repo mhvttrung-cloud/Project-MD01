@@ -20,8 +20,8 @@
 }
 .header-search {
     position: relative;
-    width: 530px;
-    margin: 0 56px;
+    margin: 0 32px;
+    flex: 1;
 }
 .header-search input {
     border: 8px solid transparent;
@@ -42,9 +42,9 @@
     left: 16px;
 }
 .header-menu {
+    gap: 52px;
     display: flex;
     flex-direction: row;
-    width: 100%;
 }
 .header-menu a {
     margin : 32px;

@@ -1,0 +1,456 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88px;
+    width: 100%;
+    padding: 0 160px;
+    /* Nếu như màn hình chỉ khoảng 1.200px thì có nên để padding như vậy không ? */
+}
+.header-logo {
+    width: 96px;
+    height: 28px;
+    color: #000000;
+    border: none;
+}
+.header-search {
+    position: relative;
+    width: 530px;
+    margin: 0 56px;
+}
+.header-search input {
+    border: 8px solid transparent;
+    border-radius: 8px;
+    height: 56px;
+    width: 100%;
+    padding-left: 32px;
+    background-color: #F5F5F5;
+    
+}
+.header-search img {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    top: 50%;
+    left: 16px;
+}
+.header-menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.header-menu a {
+    margin : 32px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500px;
+}
+.user-click {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: 32px;
+}
+.user-click img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+
+
+/* -----nav choose----- */
+#container {
+    background-color: #2E2E2E;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 48px;
+}   
+.nav-div {
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    
+}
+.nav-div a {
+    text-decoration: none;
+    cursor: pointer;
+    height: 32px;
+    width: 100%;
+    text-align: center;
+    line-height: 32px;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+.nav-div img {
+    height : 24px;
+    width: 24px;
+    margin-right: 14px;
+}
+.nav-line{
+    height: 24px;
+    width: 0;
+}
+
+/* Iphone image */
+.nav-content {
+    background-color: #211C24;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-iphone14 {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    margin-left: 160px;
+}
+.title {
+    font-size: 25px;
+    font-weight: 600;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+.iphone-title {
+    margin-top: 24px;
+    font-size: 96px;
+    color: #FFFFFF;
+}
+.title-hit {
+    margin-top: 24px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.5;
+}
+.nav-img {
+    height: 632px;
+    width: 406px;
+}
+.nav-content img {
+    margin-right: 160px;
+}
+.banner-sale-btn {
+    width: 187px;
+    height: 56px;
+    border-radius: 6px;
+    border: 1px solid whitesmoke;
+    margin-top: 24px;
+    background-color: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+
+/* Category */
+#category {
+    margin: 160px;
+}
+.category-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-top p {
+    font-size: 24px;
+    color: #000000;
+} 
+
+.category-btn i {
+    height: 32px;
+    width: 80px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+}
+
+.categoris {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 32px;
+    margin-top: 32px;
+}
+.categoris-btn {
+    width: 160px;
+    height: 128px;
+    border: none;
+    border-radius: 15px;
+    min-width: 135px;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+
+/* Products */
+.products-top {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-left: 160px;
+}
+
+.products-top-text {
+    text-decoration: none;
+    color: #8B8B8B;
+    font-size: 18px;
+    margin-top: 56px;
+    margin-bottom: 32px;
+}
+.parent-conponent {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 160px;
+    gap: 32px;
+    
+}
+.parent-down {
+    margin-top: 16px;
+}
+.card {
+    position: relative;
+    min-width: 200px;
+    width: 268px;
+    border: none;
+    border-radius: 9px;
+    background-color: #F6F6F6;
+    text-align: center;
+}
+.card img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 160px;
+    width: 160px;
+    object-fit: cover; 
+    padding: 12px;
+    margin: 50px auto;
+}
+/* 👆 Cản chỉnh margin theo màn hình nên cảm giác thông số k có theo Figma */
+
+.crad-text {
+    margin-top: 16px;
+}
+.crad-text2 {
+    margin-top: 16px;
+}
+.card-btn {
+    margin-top: 12px;
+    text-align: center;
+    height: 48px;
+    width: 103px;
+    background-color: #000000;
+    border-radius: 8px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 24px;
+}
+.icon-btn {
+    position: absolute;
+    right: 16px;
+    top: 24px;
+    border: none;
+    background-color: transparent;
+    height: 32x;
+    width: 32px;
+}
+.head-bg-color i {
+    color: #FF0000;
+    border: 1.4px;
+    border-radius: 0.4px solid #FF0000;
+    /* Chưa làm được hình trái tim có nền đỏ ! */
+}
+
+/* Discount Products */
+.discount-h3 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 58px 0 32px 160px;
+}
+
+
+/* banner2 */
+#banner2 {
+    margin-top: 80px;
+    background-color: #000000;
+    position: relative;
+    width: 100%;
+    height: 448px;
+    overflow: hidden;
+}
+.banner2-img {
+    position: absolute;
+    inset: 0;
+    /* 👆 ảnh ôm banner */
+}
+
+.banner2-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.banner2-content h4 {
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: 400;
+    width: 498px;
+    color: #FFFFFF;
+}
+.banner2-content p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #787878;
+}
+.banner-sale-btn {
+}
+
+.banner2-img-left , .banner2-img-right {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    /* Gộp vào vì cùng thông số */
+}
+.banner2-img-left {
+    left: 0;
+    position: absolute;
+    object-fit: contain;
+    height: 100%;
+    width: 50%;
+}
+.banner2-img-left img:nth-child(1){
+    position: absolute;
+    height: 181px;
+    width: 337px;
+    top: -66px;
+    left: 223px;
+}
+.banner2-img-left img:nth-child(2){
+    position: absolute;
+    height: 192px;
+    width: 237px;
+    top: 3px;
+    left: 39px;
+}
+.banner2-img-left img:nth-child(3){
+    position: absolute;
+    height: 262px;
+    width: 418px;
+    left: 0;
+    bottom: 0px;
+    transform: rotateY(180deg);
+}
+.banner2-img-right {
+    right: 0;
+    position: absolute;
+    object-fit: contain;
+
+}
+.banner2-img-right img:nth-child(1) {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 120px;
+    height: 360px;
+    transform: rotateY(31deg);
+    /* ????? */
+}
+.banner2-img-right img:nth-child(2) {
+    position: absolute;
+    width: 404px;
+    height: 321px;
+    top: 247px;
+    right: 0;
+}
+
+
+/* footer===========*/
+#footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #000000;
+    gap: 80px;
+    width: 100%;
+    padding-top: 140px;
+    margin-right: 5px;
+}
+.loichao {
+    height: 128px;
+    width: 384px;
+    font-size: 14px;
+    color: #CFCFCF;
+    top: 0;
+    left: 0;
+    line-height: 171%;    
+}
+.logo-vector {
+    color: #FF0000;
+    width: 95px;
+    height: 28px;
+    /* Làm sao để style logo thành màu trắng ?
+     */
+}
+h5 {
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+.section {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    left: 0;
+    gap: 32px;
+}
+.services {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+.services a , .support-services a {
+    text-decoration: none;
+    color: #CFCFCF;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 32px;
+}
+.support-services {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+/*  */
+.footer-logo {
+    padding: 24px 0 104px 160px;
+    background-color: #000000;
+    width: 100%;
+}
+#sns-logo {
+    width: 16px;
+    height: 13px;
+}
+.logo-color {
+    color: #FFFFFF;
+}
+/* Tại sao !!!! */

@@ -153,10 +153,8 @@
 
 /* Category */
 #category {
-    margin-top: 80px;
-    margin-bottom: 78px;
-    margin-left: 160px;
-    margin-right: 160px;
+    padding: 80px 160px 78px 160px;
+    background-color: rgba(237, 237, 237, 0.2);
 }
 .category-top {
     display: flex;
@@ -171,6 +169,7 @@
     display: flex;
     gap: 24px;
     margin-right: 9px;
+    color: #EDEDED;
 }
 
 .category-btn i {
@@ -450,6 +449,10 @@ h5 {
 .footer-logo {
     padding: 24px 0 104px 160px;
     background-color: #000000;
+    display: flex;
+    gap: 36px;
+    margin-left: 115px;
+    margin-top: 24px;
 }
 #sns-logo {
     width: 16px;
@@ -459,15 +462,13 @@ h5 {
     color: #FFFFFF;
     background-color: transparent;
 }
-.footer-logo i {
+.footer-logo img {
     color: #FFFFFF;
     background-color: transparent;
-        display: flex;
-    justify-content: space-between;
-    text-align: left;
-    gap: 112px;
     max-width: 1119px;
-    margin: 0 auto;
+
+
 }
 
-/* Tại sao !!!! */
+/* Thông số body trên figma : W 1,440px * H 3,662px !!!! */
+/* Thông số thực sau khi style : W 1,671px * H 3,725px */

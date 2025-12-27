@@ -20,13 +20,13 @@
                 <i class="fa-regular fa-fire"></i>
                 <a href="#">Ecommerce</a>
             </div>
-            <div>
+            <div class="item-container">
                 <div class="menu-item">
                     <img src="../IMG/icon/home-img.png" alt="Thống kê">
                     <a href="#">Thống kê</a>
                 </div>
                 <div class="menu-item">
-                    <img src="../IMG/icon/danh-muc.png" alt="Danh mục">
+                    <img src="../IMG/icon/cash2.png" alt="Danh mục">
                     <a href="#">Danh mục</a>
                 </div>
                 <div class="menu-item">
@@ -39,23 +39,110 @@
         <div class="div-rigth">
             <div class="header">
                 <i class="fa-solid fa-bell"></i>
-                <img src="" alt="avatar">
+                <img src="../IMG/10d5c319419f2137bf8772f28aaf576b74a68518.png" alt="avatar">
             </div>
         <!-- Search bar -->
             <div class="container-content">
+                <div class="menu-content">
+                    <h2>Danh mục</h2>
+                    <button type="button">Thêm mới danh mục</button>
+                </div>
                 <div class="search-bar">
-                    <section class="option">
+                    <select class="option">
                         <option value="Tất cả">Tất cả</option>
                         <option value="Đang hoạt động">Đang hoạt động</option>
                         <option value="Ngừng hoạt động">Ngừng hoạt động</option>
-                    </section>
-                    <input type="search">
-                    <i class="fa-regular fa-magnifying-glass"></i>
+                    </select>
+                    <input type="search" placeholder="Tìm kiếm danh mục theo tên" />
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-
+                
             <!-- Content -->
                 <div class="content">
-
+                    <table>
+                        <thead>
+                            <tr class="content-menu">
+                                <th class="number">Mã danh mục <i class="fa-solid fa-arrow-down"></i></th>
+                                <th class="category-name">Tên danh mục <i class="fa-solid fa-arrow-down"></i></th>
+                                <th class="status">Trạng thái</th>
+                                <th colspan="2" class="function2">Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="content-bowel">
+                                <td class="number-category1">DM001</td>
+                                <td class="number-category2">Quần áo</td>
+                                <td class="number-category3 category-green"> ・Đang hoạt động</td>
+                                <div class="button-right">
+                                    <td class="number-category4"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></td>
+                                    <td class="number-category5"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></td>
+                                </div>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td class="number-category1">DM002</td>
+                                <td class="number-category2">Kính mắt</td>
+                                <td class="number-category3 category-red"> ・Ngừng hoạt động</td>
+                                <td class="number-category4"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></td>
+                                <td class="number-category5"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td class="number-category1">DM003</td>
+                                <td class="number-category2">Giày dép</td>
+                                <td class="number-category3 category-green"> ・Đang hoạt động</td>
+                                <td class="number-category4"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></td>
+                                <td class="number-category5"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td class="number-category1">DM004</td>
+                                <td class="number-category2">Thời trang nam</td>
+                                <td class="number-category3 category-red"> ・Ngừng hoạt động</td>
+                                <td class="number-category4"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></td>
+                                <td class="number-category5"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td class="number-category1">DM005</td>
+                                <td class="number-category2">Thời trang nữ</td>
+                                <td class="number-category3 category-red"> ・Ngừng hoạt động</td>
+                                <td class="number-category4"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></td>
+                                <td class="number-category5"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td class="number-category1">DM006</td>
+                                <td class="number-category2">Hoa quả</td>
+                                <td class="number-category3 category-red"> ・Ngừng hoạt động</td>
+                                <td class="number-category4"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></td>
+                                <td class="number-category5"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td class="number-category1">DM007</td>
+                                <td class="number-category2">Rau</td>
+                                <td class="number-category3 category-green"> ・Đang hoạt động</td>
+                                <td class="number-category4"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></td>
+                                <td class="number-category5"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td class="number-category1">DM008</td>
+                                <td class="number-category2">Điện thoại</td>
+                                <td class="number-category3 category-red"> ・Ngừng hoạt động</td>
+                                <td class="number-category4"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></td>
+                                <td class="number-category5"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- page number-button -->
+                    <div class="page-choose-number">
+                        <button class="page-button"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button class="page-number">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number page-number3">3</button>
+                        <button class="page-number">4</button>
+                        <button class="page-number">5</button>
+                        <button class="page-number">6</button>
+                        <button class="page-number">7</button>
+                        <button class="page-number"><i class="fa-solid fa-ellipsis"></i></button>
+                        <button class="page-number">20</button>
+                        <button class="page-button"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
                 </div>
             </div>
         </div>

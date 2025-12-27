@@ -1,19 +1,263 @@
 #container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+    min-height: 100vh;
+}
+#div-left {
+    min-height: 100vh;
+    background-color: #F6F8F9;
+    /* 👆Tại sao background lại không đi xuống hết theo thanh cuộn nhỉ ? */
 }
 .menu-logo {
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 14px;
+    height: 40px;
+    width: 152px;
+    margin : 14px;
+    border-left: 1px solid #E5E7EB;
+    /*  */
 }
 .menu-logo i {
     transform: rotateY(180deg);
     height: 24px;
     width: 24px;
 }
-
-
-
-.menu-item {
+.menu-logo a {
+    width: 102px;
+    height: 24px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 6px;
+    line-height: 18px;
+    color: #252C32;
 }
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+    
+}
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    border-radius: 1px;
+    
+}
+
+.menu-item img {
+    height: 24px;
+    width: 24px;
+    margin-bottom: 8px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: #3F3F46;
+}
+
+/* TOP - RIGHT */
+
+.container-content {
+    border-left: 1px solid #E5E7EB;
+}
+
+.div-rigth {
+    background-color: #FFFFFF;
+    height : 100%;
+    width: 100%;
+    border-left: 1px solid #E5E7EB;
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 56px;
+    border-bottom: 1px solid #E5E7EB;
+}
+.header i {
+    height: 36px;
+    width: 36px;
+    color: #B0BABF;
+    line-height: 36px;
+}
+.header img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    margin: 10px 24px 10px 12px;
+}
+/* search bar TOP*/
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+}
+.menu-content h2 {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.022em;
+    color: #252C32;
+}
+.menu-content button {
+    background-color: #4094F7;
+    color: #F6F8F9;
+    width: 166px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid;
+    border-radius: 6px ;
+}
+.search-bar {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 0 20px 11px 0;
+}
+.option {
+    height: 40px;
+    width: 259px;
+    padding : 10px 42px 10px 14px;
+    border-radius: 6px;
+}
+/* Hình mũi tên danh sách chưa style */
+.search-bar input {
+    height : 40px;
+    width: 254px;
+    padding: 12px 50px 12px 16px;
+    position: relative;
+}
+.search-bar i {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: 14px;
+    right: 37px;
+}
+
+/* Content */
+
+table {
+    width: 100%;
+    border-collapse: separate; /* giữ border */
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.content {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.content-menu {
+    width: 100%;
+    height: 44px;
+    padding: 24px;
+    text-align: left;
+    background-color: #F9FAFB;
+}
+th{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #667085;
+}
+th, td {
+    /* 👇padding Cần kiểm tra lại */
+    /* Vì sao transh or pen cách xa nhau quá ? Đúng là phải gần nhau chứ ??? */
+    padding: 24px; 
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB;
+}
+td  {
+    font-size: 14px;
+    color: #101828;
+
+}
+.content-bowel {
+    border-bottom: 1px;
+}
+.number {
+    width: 274px;
+}
+.category-name {
+    width: 434px;
+}
+.status {
+    width: 235px;
+}
+.function2 {
+    width: 169px;
+}
+.icon-right {
+    height: 40px;
+    width: 40px;
+}
+.icon-content {
+    height: 40px;
+    width: 40px;
+}
+.icon-content-button {
+    background-color: transparent;
+    border: none;
+}
+.button-right {
+    display: flex;
+    padding: 12px 16px;
+}
+
+
+/* Page-choose-number */
+.page-choose-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.page-button , .page-number {
+    font-size: 14px;
+    font-weight: 400;
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #D8DAE5;
+    /* Tại sao border không hoạt động??? */
+}
+
+.page-number3 {
+    background-color: #0066FF;
+    border-radius: 4px;
+}
+.category-green , .category-red {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    border-radius: 16px;
+    /* height: 22px;
+    width: 120px; */
+    padding: 2px 8px;
+    text-align: center;
+}
+.category-green {
+    color: #027A48;
+    background-color: rgba(2, 122, 72, 0.05);
+}
+
+.category-red {
+    color: #B91C1C;
+    background-color: rgba(185, 28, 28, 0.05);
+}
+
+

@@ -3,10 +3,9 @@
     align-items: flex-start;
     background-color: #FFFFFF;
     min-height: 100vh;
+    background-color: #F6F8F9;
 }
 #div-left {
-    min-height: 100vh;
-    background-color: #F6F8F9;
     /* 👆Tại sao background lại không đi xuống hết theo thanh cuộn nhỉ ? */
 }
 .menu-logo {
@@ -17,7 +16,6 @@
     height: 40px;
     width: 152px;
     margin : 14px;
-    border-left: 1px solid #E5E7EB;
     /*  */
 }
 .menu-logo i {
@@ -125,10 +123,16 @@
     padding: 0 20px 11px 0;
 }
 .option {
+    position: relative;
     height: 40px;
     width: 259px;
     padding : 10px 42px 10px 14px;
     border-radius: 6px;
+}
+option ::after {
+    position: absolute;
+    content :icon;
+
 }
 /* Hình mũi tên danh sách chưa style */
 .search-bar input {
@@ -176,11 +180,11 @@ th, td {
     /* Vì sao transh or pen cách xa nhau quá ? Đúng là phải gần nhau chứ ??? */
     padding: 24px; 
     text-align: left;
-    border-bottom: 1px solid #E5E7EB;
 }
 td  {
     font-size: 14px;
     color: #101828;
+    border-bottom: 1px solid #E5E7EB;
 
 }
 .content-bowel {
@@ -212,7 +216,11 @@ td  {
 }
 .button-right {
     display: flex;
-    padding: 12px 16px;
+    gap: 4px;
+}
+.button-right button {
+    background-color: transparent;
+    border: none;
 }
 
 
@@ -245,19 +253,24 @@ td  {
     font-size: 12px;
     line-height: 18px;
     border-radius: 16px;
-    /* height: 22px;
-    width: 120px; */
+    height: 22px;
+    width: 120px; 
     padding: 2px 8px;
+    margin: 26px auto;
     text-align: center;
+    display: inline-block;   
+    justify-content: center;
+    white-space: nowrap;
 }
 .category-green {
     color: #027A48;
-    background-color: rgba(2, 122, 72, 0.05);
+
+    background-color: rgba(185, 28, 28, 0.05);
+    padding: 2px;
 }
 
 .category-red {
     color: #B91C1C;
     background-color: rgba(185, 28, 28, 0.05);
 }
-
 

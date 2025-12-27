@@ -129,10 +129,11 @@
     padding : 10px 42px 10px 14px;
     border-radius: 6px;
 }
-option ::after {
+option::after {
     position: absolute;
-    content :icon;
-
+    content :"";
+    width: 10px;
+    height: 10px;
 }
 /* Hình mũi tên danh sách chưa style */
 .search-bar input {
@@ -176,8 +177,6 @@ th{
     color: #667085;
 }
 th, td {
-    /* 👇padding Cần kiểm tra lại */
-    /* Vì sao transh or pen cách xa nhau quá ? Đúng là phải gần nhau chứ ??? */
     padding: 24px; 
     text-align: left;
 }
@@ -185,7 +184,6 @@ td  {
     font-size: 14px;
     color: #101828;
     border-bottom: 1px solid #E5E7EB;
-
 }
 .content-bowel {
     border-bottom: 1px;
@@ -214,11 +212,8 @@ td  {
     background-color: transparent;
     border: none;
 }
-.button-right {
-    display: flex;
-    gap: 4px;
-}
-.button-right button {
+
+.button button {
     background-color: transparent;
     border: none;
 }
@@ -241,7 +236,6 @@ td  {
     background-color: transparent;
     border-radius: 4px;
     border: 1px solid #D8DAE5;
-    /* Tại sao border không hoạt động??? */
 }
 
 .page-number3 {
@@ -255,22 +249,14 @@ td  {
     border-radius: 16px;
     height: 22px;
     width: 120px; 
-    padding: 2px 8px;
-    margin: 26px auto;
-    text-align: center;
-    display: inline-block;   
-    justify-content: center;
-    white-space: nowrap;
 }
 .category-green {
-    color: #027A48;
-
-    background-color: rgba(185, 28, 28, 0.05);
-    padding: 2px;
+    color: rgb(2, 122, 72);
+    background-color: rgba(29, 190, 123, 0.5);
 }
 
 .category-red {
     color: #B91C1C;
-    background-color: rgba(185, 28, 28, 0.05);
+    background-color: rgba(211, 22, 22, 0.05);
 }
 

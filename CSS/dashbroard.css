@@ -1,0 +1,132 @@
+#container {
+    display: flex;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+    min-height: 100vh;
+    background-color: #F6F8F9;
+    position: relative;
+}
+.div-left {
+    border-right: 1px solid #F6F8F9 ;
+}
+
+.menu-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    height: 40px;
+    width: 152px;
+    margin : 14px;
+    /*  */
+}
+.menu-logo i {
+    transform: rotateY(180deg);
+    height: 24px;
+    width: 24px;
+}
+.menu-logo a {
+    width: 102px;
+    height: 24px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 6px;
+    line-height: 24px;
+    color: #252C32;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+    
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    border-radius: 1px;
+}
+.menu-item:hover {
+    background-color: #D7EDFF;
+    border-radius: 6px;
+}
+
+.menu-item img {
+    height: 24px;
+    width: 24px;
+    margin-bottom: 8px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: #3F3F46;
+}
+
+/* TOP - RIGHT */
+
+.container-content {
+    border-left: 1px solid #E5E7EB;
+}
+
+.div-rigth {
+    background-color: #FFFFFF;
+    height : 100%;
+    width: 100%;
+    border-left: 1px solid #E5E7EB;
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 56px;
+    border-bottom: 1px solid #E5E7EB;
+}
+.header i {
+    height: 36px;
+    width: 36px;
+    color: #B0BABF;
+    line-height: 36px;
+}
+.header img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    margin: 10px 24px 10px 12px;
+}
+.log-out {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 24px;
+}
+.log-out button {
+    height: 43px;
+    width: 240px;
+    text-align: left;
+    padding: 10px 16px 10px 16px;
+    background-color: transparent;
+    border: 1px solid #F2F4F7;
+    color: #344054;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.log-out button i {
+    margin-right: 12px;
+}
+.dashboard-content {
+    padding: 0px 24px 100vh 24px;
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.dashboard-content p {
+    color: #252C32;
+    font-size: 24px;
+    font-weight: 700;
+}

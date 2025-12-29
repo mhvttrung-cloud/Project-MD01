@@ -208,17 +208,22 @@
             <div class="update-code-product">
                 <span>Mã sản phẩm <span class="required">*</span></span>
                 <input class="update-code" type="text">
+                <p class="message"></p>
             </div>
             <div class="update-code-product">
                 <span>Tên sản phẩm <span class="required">*</span></span>
                 <input class="update-name" type="text">
+                <p class="message"></p>
             </div>
         </div>
 
         <div class="update-child">
             <div class="update-code-product">
-                <span>Tên sản phẩm <span class="required">*</span></span>
-                <input class="update-name" type="text">
+                <span>Danh mục <span class="required">*</span></span>
+                <select class="update-option">
+                    <option value="Điện thoại">Điện thoại</option>
+                    <option value="Máy tính">Máy tính</option>
+                </select>
             </div>
                 <div class="update-choose">
                     <p>Trạng thái</p>
@@ -251,6 +256,77 @@
                 </div>
             </div>
             <div class="update-img-input">
+                <div>Hình ảnh  <span class="required">*</span></div>
+                <input type="text">
+            </div>
+            <div class="product-details">
+                <div>Chi tiết sản phẩm</div>
+                <input type="text">
+            </div>
+            <div class="line-textInput"></div>
+
+            <div class="btn-cancel-save">
+                <button>Huỷ</button>
+                <button>Thêm</button>
+            </div>
+    </div>
+
+
+    <!-- Cập nhật sản phẩm -->
+    <div class="edit-parent">
+        <h3>Cập nhật sản phẩm</h3>
+        <div class="edit-child">
+            <div class="edit-code-product">
+                <span>Mã sản phẩm <span class="required">*</span></span>
+                <input class="edit-code" type="text">
+                <p class="message"></p>
+            </div>
+            <div class="edit-code-product">
+                <span>Tên sản phẩm <span class="required">*</span></span>
+                <input class="edit-name" type="text">
+                <p class="message"></p>
+            </div>
+        </div>
+
+        <div class="edit-child">
+            <div class="edit-code-product">
+                <span>Danh mục <span class="required">*</span></span>
+                <select class="edit-option">
+                    <option value="Điện thoại">Điện thoại</option>
+                    <option value="Máy tính">Máy tính</option>
+                </select>
+            </div>
+                <div class="edit-choose">
+                    <p>Trạng thái</p>
+                    <label class="radio-edit">
+                        <input type="radio" name="status" checked>
+                        <span class="edit"></span>
+                        <span class="text">Đang hoạt động</span>
+                    </label>
+
+                    <label class="radio-edit">
+                        <input type="radio" name="status">
+                        <span class="edit"></span>
+                        <span class="text">Ngừng hoạt động</span>
+                    </label>
+                </div>
+
+            </div>
+            <div class="edit-child">
+                <div class="edit-quantity">
+                    <div>Số lượng</div>
+                    <input class="qty-input" type="number" min="1" value="0" step="1">
+                </div>
+                <div class="edit-price">
+                    <div>Giá</div>
+                    <input class="qty-input" type="number" min="500000" value="1000000" step="1000000">
+                </div>
+                <div class="edit-sales">
+                    <div>Giảm giá</div>
+                    <input class="qty-input" type="number" min="1" value="0" step="1">
+                </div>
+            </div>
+            <div class="edit-img-input">
                 <div>Hình ảnh  <span class="required">*</span></div>
                 <input type="text">
             </div>

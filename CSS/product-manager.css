@@ -270,6 +270,7 @@ td  {
 
 /* Thêm mới sản phẩm */
 .update-parent {
+    display: none;
     padding: 24px;
     height: 615px;
     width: 852px;
@@ -304,8 +305,15 @@ td  {
     padding: 10px;
     margin-top: 8px;
 }
-.update-code {
+.update-option {
+    height: 44px;
+    width: 410px;
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 8px;
 }
+
 .update-name {
 }
 .update-choose p , .update-quantity, .update-price, .update-sales , .update-img-input , .product-details {
@@ -370,3 +378,112 @@ td  {
     color: #FFFFFF;
 }
 
+/* Cập nhật sản phẩm */
+.edit-parent {
+    display: block;
+    padding: 24px;
+    height: 615px;
+    width: 852px;
+}
+.edit-parent h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.edit-child {
+    display: flex;
+    gap: 20px;
+}
+.required {
+    color: #B91C1C;
+}
+
+.edit-code-product {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.edit-code-product input {
+    height: 44px;
+    width: 410px;
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 8px;
+}
+.edit-option {
+    height: 44px;
+    width: 410px;
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 8px;
+}
+
+.edit-name {
+}
+.edit-choose p , .edit-quantity, .edit-price, .edit-sales , .edit-img-input , .product-details {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 21px;
+}
+.edit-quantity input , .edit-price input , .edit-sales input {
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    padding : 10px;
+    height: 44px;
+    width: 266px;
+    margin-bottom: 24px;
+    margin-top: 8px;
+}
+.edit-img-input input , .product-details input { 
+    padding: 12px 16px 11px 16px;
+    height: 44px;
+    width: 850px;
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+.product-details input {
+    height: 92px;
+}
+
+.text {
+    margin-right: 38px;
+}
+.line-textInput {
+    height: 1px;
+    width: 851px;
+    background-color: #B0BABF;
+    margin-bottom: 24px;
+}
+
+.btn-cancel-save {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.btn-cancel-save button {
+    height: 44px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.btn-cancel-save button:nth-child(1) {
+    background-color: transparent;
+    border: 1px solid #E4E4E7;
+    width: 72px;
+    color: #18181B;
+}
+.btn-cancel-save button:nth-child(2) {
+    background-color: #007AFF;
+    border: 1px;
+    width: 86px;
+    color: #FFFFFF;
+}

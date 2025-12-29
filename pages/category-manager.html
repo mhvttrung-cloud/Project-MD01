@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang quản lý danh mục</title>
     <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/category-manager.css"><link
-  rel="stylesheet"
+    <link rel="stylesheet" href="../CSS/category-manager.css">
+    <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 />
 
@@ -17,7 +17,7 @@
         <!-- Example side navigation  LEFT-->
         <div id="div-left">
             <div class="menu-logo">
-                <img srcset="../IMG/Vector.png 2x" alt="">
+                <img srcset="../IMG/Vector.png" alt="">
                 <a href="#">Ecommerce</a>
             </div>
             <div class="item-container">
@@ -45,7 +45,7 @@
             <div class="container-content">
                 <div class="menu-content">
                     <h2>Danh mục</h2>
-                    <button type="button">Thêm mới danh mục</button>
+                    <button>Thêm mới danh mục</button>
                 </div>
                 <div class="search-bar">
                     <select class="option">
@@ -161,5 +161,104 @@
             </div>
         </div>
     </nav>
+
+    <!-- Box model <> Sửa - Xoá -->
+     <div class="box-none">
+        <div class="box-none-container">
+            <img src="../IMG/icon/Featured icon.png" alt="!">
+            <div class="box-none-para">
+                <p>Xác nhận</p>
+                <span>Bạn có chắc chắn muốn xóa sản phẩm <b>Táo đỏ</b> khỏi hệ thống không?</span>
+            </div>
+            <p class="line"></p>
+            <div class="box-none-btn">
+                <button class="delete-cancel cancel">Huỷ</button>
+                <button class="delete-cancel delete">Xoá</button>
+            </div>
+        </div>
+     </div>
+
+     <!-- Notify -->
+    <div class="notify">
+        <div class="notify-delete">
+            <div class="notify-detele-parent">
+                <img src="../IMG/icon/Subtract.png" alt="checked">
+                <p>Thành công</p>
+            </div>
+            <button><img src="../IMG/icon/_BaseCloseButton.png" alt="out X"></button>
+            <p>Xoá sản phẩm thành công</p>
+        </div>
+    </div>
+
+    <!-- Thêm mới danh mục -->
+    <div class="push-code-container">
+        <div class="push-code">
+            <h3>Thêm mới danh mục</h3>
+            <div class="code-input">
+                <label for="add-code">Mã danh mục <span class="required">*</span></label>
+                <input type="text" >
+            </div>
+            <div class="code-input">
+                <label for="add-name">Tên danh mục  <span class="required">*</span></label>
+                <input type="text">
+            </div>
+            <div class="add-choose">
+                <p>Trạng thái</p>
+                <label class="radio-circle">
+                    <input type="radio" name="status" checked>
+                    <span class="circle"></span>
+                    <span class="text">Đang hoạt động</span>
+                </label>
+
+                <label class="radio-circle">
+                    <input type="radio" name="status">
+                    <span class="circle"></span>
+                    <span class="text">Ngừng hoạt động</span>
+                </label>
+
+                <div class="line-textInput"></div>
+
+                <div class="btn-cancel-save">
+                    <button>Huỷ</button>
+                    <button>Thêm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Cập nhật danh mục --> Chưa làm ! html sửa, css làm !
+    <div class="update-code-container">
+        <div class="update-code">
+            <h3>Cập nhật danh mục</h3>
+            <div class="update-input">
+                <label for="update-code">Mã danh mục <span class="required">*</span></label>
+                <input type="text" >
+            </div>
+            <div class="update-input">
+                <label for="add-name">Tên danh mục <span class="required">*</span></label>
+                <input type="text">
+            </div>
+            <div class="update-choose">
+                <p>Trạng thái</p>
+                <label class="radio-edit">
+                    <input type="radio" name="status" checked>
+                    <span class="update"></span>
+                    <span class="text">Đang hoạt động</span>
+                </label>
+
+                <label class="radio-edit">
+                    <input type="radio" name="status">
+                    <span class="update"></span>
+                    <span class="text">Ngừng hoạt động</span>
+                </label>
+
+                <div class="line-textInput"></div>
+                <div class="cancel-save">
+                    <button>Huỷ</button>
+                    <button>Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

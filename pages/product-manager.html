@@ -4,8 +4,268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="../CSS/product-manager.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 </head>
 <body>
-    
+     <nav id="container">
+        <!-- Example side navigation  LEFT-->
+        <div id="div-left">
+            <div class="menu-logo">
+                <img srcset="../IMG/Vector.png" alt="">
+                <a href="#">Ecommerce</a>
+            </div>
+            <div class="item-container">
+                <div class="menu-item">
+                    <img src="../IMG/icon/home-img.png" alt="Thống kê">
+                    <a href="#">Thống kê</a>
+                </div>
+                <div class="menu-item">
+                    <img src="../IMG/icon/cash2.png" alt="Danh mục">
+                    <a href="#">Danh mục</a>
+                </div>
+                <div class="menu-item">
+                    <img src="../IMG/icon/thu-muc.png" alt="Thư mục">
+                    <a href="#">Sản phẩm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Header  TOP & RIGHT ALL-->
+        <div class="div-rigth">
+            <div class="header">
+                <i class="fa-solid fa-bell"></i>
+                <img src="../IMG/10d5c319419f2137bf8772f28aaf576b74a68518.png" alt="avatar">
+            </div>
+        <!-- Search bar -->
+            <div class="container-content">
+                <div class="menu-content">
+                    <h2>Sản Phẩm</h2>
+                    <button>Thêm mới sản phẩm</button>
+                </div>
+                <div class="search-bar">
+                    <select class="option">
+                        <option value="Tất cả">Lọc theo tên sản phẩm</option>
+                        <option value="Iphone 12 Pro">Iphone 12 Pro</option>
+                        <option value="Samsung Galaxy X20">Samsung Galaxy X20</option>
+                        <option value="Phone 8 Plus">Phone 8 Plus</option>
+                        <option value="Iphone 14 Pro max">Iphone 14 Pro max</option>
+                        <option value="Oppo X3">Oppo X3</option>
+                        <option value="Iphone 16">Iphone 16</option>
+                        <option value="Iphone 7 Plus">Iphone 7 Plus</option>
+                        <option value="Samsung  S20 Ultra">Samsung  S20 Ultra</option>
+                    </select>
+                    <select class="option option 2">
+                        <option value="Tất cả">Lọc theo trạng thái</option>
+                        <option value="Đang hoạt động">Đang hoạt động</option>
+                        <option value="Ngừng hoạt động">Ngừng hoạt động</option>
+                    </select>
+                    <input type="search" placeholder="Tìm kiếm danh mục theo tên" />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                
+            <!-- Content -->
+                <div class="content">
+                    <table>
+
+                        <thead>
+                            <tr class="content-menu">
+                                <th class="id">Mã sản phẩm</th>
+                                <th class="name">Tên sản phẩn <i class="fa-solid fa-arrow-down"></i></th>
+                                <th class="price">Giá <i class="fa-solid fa-arrow-down"></i></th>
+                                <th class="quantity">Số lượng</th>
+                                <th class="sales">Giảm giá</th>
+                                <th class="status">Trạng thái</th>
+                                <th class="function2">Chức năng</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="content-bowel">
+                                <td>SP001</td>
+                                <td>Iphone 12 Pro</td>
+                                <td>12.000.000 đ</td>
+                                <td>10</td>
+                                <td>0%</td>
+                                <td><span class="category-green"> ・Đang hoạt động</span></td>
+                                <td class="button">
+                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                </td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td>SP002</td>
+                                <td>Samsung Galaxy X20</td>
+                                <td>21.000.000 đ</td>
+                                <td>100</td>
+                                <td>5%</td>
+                                <td><span class="category-red"> ・Ngừng hoạt động</span></td>
+                                <td class="button">
+                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                </td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td>SP003</td>
+                                <td>Phone 8 Plus</td>
+                                <td>5.000.000 đ</td>
+                                <td>10</td>
+                                <td>0%</td>
+                                <td><span class="category-green"> ・Đang hoạt động</span></td>
+                                <td class="button">
+                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                </td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td>SP004</td>
+                                <td>Iphone 14 Pro max</td>
+                                <td>25.000.000 đ</td>
+                                <td>20</td>
+                                <td>2%</td>
+                                <td><span class="category-red"> ・Ngừng hoạt động</span></td>
+                                <td class="button">
+                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                </td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td>SP005</td>
+                                <td>Oppo X3</td>
+                                <td>2.000.000 đ</td>
+                                <td>10</td>
+                                <td>5%</td>
+                                <td><span class="category-red"> ・Ngừng hoạt động</span></td>
+                                <td class="button">
+                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                </td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td>SP006</td>
+                                <td>Iphone 16</td>
+                                <td>20.000.000 đ</td>
+                                <td>20</td>
+                                <td>3%</td>
+                                <td><span class="category-red"> ・Ngừng hoạt động</span></td>
+                                <td class="button">
+                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                </td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td>SP007</td>
+                                <td>Iphone 7 Plus</td>
+                                <td>4.000.000 đ</td>
+                                <td>10</td>
+                                <td>4%</td>
+                                <td><span class="category-green"> ・Đang hoạt động</span></td>
+                                <td class="button">
+                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                </td>
+                            </tr>
+                            <tr class="content-bowel">
+                                <td>SP008</td>
+                                <td>Samsung  S20 Ultra</td>
+                                <td>30.000.000 đ</td>
+                                <td>15</td>
+                                <td>2%</td>
+                                <td><span class="category-red"> ・Ngừng hoạt động</span></td>
+                                <td class="button">
+                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <!-- page number-button -->
+                    <div class="page-choose-number">
+                        <button class="page-button"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button class="page-number">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number page-number3">3</button>
+                        <button class="page-number">4</button>
+                        <button class="page-number">5</button>
+                        <button class="page-number">6</button>
+                        <button class="page-number">7</button>
+                        <button class="page-number"><i class="fa-solid fa-ellipsis"></i></button>
+                        <button class="page-number">20</button>
+                        <button class="page-button"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Thêm mới sản phẩn -->
+    <div class="update-parent">
+        <h3>Thêm mới sản phẩm</h3>
+        <div class="update-child">
+            <div class="update-code-product">
+                <span>Mã sản phẩm <span class="required">*</span></span>
+                <input class="update-code" type="text">
+            </div>
+            <div class="update-code-product">
+                <span>Tên sản phẩm <span class="required">*</span></span>
+                <input class="update-name" type="text">
+            </div>
+        </div>
+
+        <div class="update-child">
+            <div class="update-code-product">
+                <span>Tên sản phẩm <span class="required">*</span></span>
+                <input class="update-name" type="text">
+            </div>
+                <div class="update-choose">
+                    <p>Trạng thái</p>
+                    <label class="radio-update">
+                        <input type="radio" name="status" checked>
+                        <span class="update"></span>
+                        <span class="text">Đang hoạt động</span>
+                    </label>
+
+                    <label class="radio-update">
+                        <input type="radio" name="status">
+                        <span class="update"></span>
+                        <span class="text">Ngừng hoạt động</span>
+                    </label>
+                </div>
+
+            </div>
+            <div class="update-child">
+                <div class="update-quantity">
+                    <div>Số lượng</div>
+                    <input class="qty-input" type="number" min="1" value="0" step="1">
+                </div>
+                <div class="update-price">
+                    <div>Giá</div>
+                    <input class="qty-input" type="number" min="500000" value="1000000" step="1000000">
+                </div>
+                <div class="update-sales">
+                    <div>Giảm giá</div>
+                    <input class="qty-input" type="number" min="1" value="0" step="1">
+                </div>
+            </div>
+            <div class="update-img-input">
+                <div>Hình ảnh  <span class="required">*</span></div>
+                <input type="text">
+            </div>
+            <div class="product-details">
+                <div>Chi tiết sản phẩm</div>
+                <input type="text">
+            </div>
+            <div class="line-textInput"></div>
+
+            <div class="btn-cancel-save">
+                <button>Huỷ</button>
+                <button>Thêm</button>
+            </div>
+    </div>
+
+
 </body>
 </html>

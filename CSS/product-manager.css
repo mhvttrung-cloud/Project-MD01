@@ -90,7 +90,12 @@
     color: #B0BABF;
     line-height: 36px;
 }
-.header img {
+.header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.header button img {
     height: 36px;
     width: 36px;
     border-radius: 50%;
@@ -380,7 +385,7 @@ td  {
 
 /* Cập nhật sản phẩm */
 .edit-parent {
-    display: block;
+    display: none;
     padding: 24px;
     height: 615px;
     width: 852px;

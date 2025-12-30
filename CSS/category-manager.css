@@ -275,14 +275,14 @@ td  {
 
 /* box-none */
 .box-none {
+    display: none;
     height: 100vh;
     width: 100vw;
     background-color: rgba(52, 64, 84, 0.7);
 }
 .box-none-container {
-    display: none;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     /*  */
     height: 268px;
     width: 500px;
@@ -298,14 +298,12 @@ td  {
     width: 48px;
     border-radius: 28px;
     border: 8px;
-    margin-bottom: 20px;
 }
 .box-none-para p {
     font-size: 18px;
     font-weight: 500;
     line-height: 28px;
     color: #101828;
-    margin-bottom: 8px;
 }
 .box-none-para span {
     height: 24px;
@@ -317,12 +315,11 @@ td  {
 }
 .box-none-para {
     color: #667085;
-    margin-bottom: 24px;
 }
 
 .line {
     height: 1px;
-    width: 100%;
+    width: 458px;
     background-color: #B0BABF;
 }
 .box-none-btn {
@@ -330,7 +327,6 @@ td  {
     justify-content: flex-end;
     align-items: center;
     gap: 12px;
-    padding: 24px 24px 24px 0;
 }
 .box-none-btn button {
     width: 60px;
@@ -475,7 +471,7 @@ td  {
 /* Edit danh mục */
 
 .update-code-container {
-    display: block;
+    display: none;
 }
 .update-code {
     padding: 24px;

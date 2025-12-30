@@ -93,11 +93,19 @@
     color: #B0BABF;
     line-height: 36px;
 }
-.header img {
+.header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.header button img {
     height: 36px;
     width: 36px;
     border-radius: 50%;
     margin: 10px 24px 10px 12px;
+}
+.btn-log-out-none {
+    display: none;
 }
 .log-out {
     display: flex;
@@ -129,4 +137,4 @@
     color: #252C32;
     font-size: 24px;
     font-weight: 700;
-}
+} 

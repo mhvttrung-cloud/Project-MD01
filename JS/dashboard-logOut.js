@@ -70,12 +70,12 @@ const logoutBtn = document.querySelector(".btn-logOut");
 
 
 /* Click avatar → hiện / ẩn logout */
-avatarBtn.addEventListener("click", function () {
-    logoutBox.classList.toggle("show");
-});
+avatarBtn.addEventListener("click", function(){
+    logoutBox.classList.toggle("btn-log-out-none");
+})
 
 /* Click logout → xoá login & về trang login */
 logoutBtn.addEventListener("click", function () {
     localStorage.removeItem("userLogin");
-    window.location.href = "../login.html";
+    window.location.href = "../pages/login.html";
 });

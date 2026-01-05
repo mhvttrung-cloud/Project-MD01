@@ -85,14 +85,14 @@ function hanldRegister(){
     const message = document.querySelector(".message");
     message.innerHTML = "";
     message.style.color = "";
-    
+ 
     if (fisrtsName === "" || lastName === "" || email === "" || password === "" ||confirmPassword === ""){
         alert("Hãy điền/check vào ô còn trống")
-        return window.location.href = "../register.html";
+        return;
     };
     if (!checkBox){
         alert("Vui lòng kiểm tra điều khoản ... và kích vào ô vuông");
-       return window.location.href = "../register.html";
+       return;
     }
 
     if (password !== confirmPassword){
@@ -113,6 +113,8 @@ function hanldRegister(){
     } else {
         message.innerHTML = "Đăng ký thành công"
         message.style.color = "green"
+
+        window.location.href = "../pages/login.html"
     };
     // Lưu newUser vào trong localStorage
     let newUser = {

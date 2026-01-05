@@ -25,7 +25,7 @@
                 </div>
                 <div class="menu-item">
                     <img src="../IMG/icon/cash2.png" alt="Danh mục">
-                    <a href="#">Danh mục</a>
+                    <a href="../pages/category-manager.html">Danh mục</a>
                 </div>
                 <div class="menu-item">
                     <img src="../IMG/icon/thu-muc.png" alt="Thư mục">
@@ -57,12 +57,12 @@
                         <option value="Iphone 7 Plus">Iphone 7 Plus</option>
                         <option value="Samsung  S20 Ultra">Samsung  S20 Ultra</option>
                     </select>
-                    <select class="option option 2">
+                    <select class="option option-2">
                         <option value="Tất cả">Lọc theo trạng thái</option>
-                        <option value="Đang hoạt động">Đang hoạt động</option>
-                        <option value="Ngừng hoạt động">Ngừng hoạt động</option>
+                        <option value="ACTIVE">Đang hoạt động</option>
+                        <option value="INACTIVE">Ngừng hoạt động</option>
                     </select>
-                    <input type="search" placeholder="Tìm kiếm danh mục theo tên" />
+                    <input  oninput="handleSearch(event)"  type="search" placeholder="Tìm kiếm danh mục theo tên" />
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 
@@ -82,7 +82,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody class="productList">
                             <tr class="content-bowel">
                                 <td>SP001</td>
                                 <td>Iphone 12 Pro</td>
@@ -91,8 +91,8 @@
                                 <td>0%</td>
                                 <td><span class="category-green"> ・Đang hoạt động</span></td>
                                 <td class="button">
-                                    <button><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
-                                    <button><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
+                                    <button class="delete-index"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
+                                    <button class="edit-index"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
                                 </td>
                             </tr>
                             <tr class="content-bowel">
@@ -200,8 +200,9 @@
             </div>
         </div>
     </nav>
+<div class="modal-overlay"></div>
 
-    <!-- Thêm mới sản phẩn -->
+    <!-- CREATE Thêm mới sản phẩn -->
     <div class="update-parent">
         <h3>Thêm mới sản phẩm</h3>
         <div class="update-child">
@@ -228,15 +229,15 @@
                 <div class="update-choose">
                     <p>Trạng thái</p>
                     <label class="radio-update">
-                        <input type="radio" name="status" checked>
+                        <input class="text checked" type="radio" name="status" value="ACTIVE">
                         <span class="update"></span>
-                        <span class="text">Đang hoạt động</span>
+                        <span >Đang hoạt động</span>
                     </label>
 
                     <label class="radio-update">
-                        <input type="radio" name="status">
+                        <input class="text checked" type="radio" name="status" value="INACTIVE">
                         <span class="update"></span>
-                        <span class="text">Ngừng hoạt động</span>
+                        <span>Ngừng hoạt động</span>
                     </label>
                 </div>
 
@@ -248,31 +249,32 @@
                 </div>
                 <div class="update-price">
                     <div>Giá</div>
-                    <input class="qty-input" type="number" min="500000" value="1000000" step="1000000">
+                    <input class="price-input" type="number" min="1" value="100" step="50">
                 </div>
                 <div class="update-sales">
                     <div>Giảm giá</div>
-                    <input class="qty-input" type="number" min="1" value="0" step="1">
+                    <input class="discount-input" type="number" min="1" value="0" step="1">
                 </div>
             </div>
             <div class="update-img-input">
                 <div>Hình ảnh  <span class="required">*</span></div>
-                <input type="text">
+                <input class="img-input" type="text">
+                <p class="message2"></p>
             </div>
             <div class="product-details">
                 <div>Chi tiết sản phẩm</div>
-                <input type="text">
+                <input class="detail-input" type="text">
             </div>
             <div class="line-textInput"></div>
 
             <div class="btn-cancel-save">
-                <button>Huỷ</button>
-                <button>Thêm</button>
+                <button type="button">Huỷ</button>
+                <button type="button" onclick="handleCreate(event)">Thêm</button>
             </div>
     </div>
 
 
-    <!-- Cập nhật sản phẩm -->
+    <!--EDIT Cập nhật sản phẩm -->
     <div class="edit-parent">
         <h3>Cập nhật sản phẩm</h3>
         <div class="edit-child">
@@ -299,13 +301,13 @@
                 <div class="edit-choose">
                     <p>Trạng thái</p>
                     <label class="radio-edit">
-                        <input type="radio" name="status" checked>
+                        <input type="radio" name="status" value="Đang hoạt động" checked>
                         <span class="edit"></span>
                         <span class="text">Đang hoạt động</span>
                     </label>
 
                     <label class="radio-edit">
-                        <input type="radio" name="status">
+                        <input type="radio" name="status" value="Ngừng hoạt động">
                         <span class="edit"></span>
                         <span class="text">Ngừng hoạt động</span>
                     </label>
@@ -315,33 +317,34 @@
             <div class="edit-child">
                 <div class="edit-quantity">
                     <div>Số lượng</div>
-                    <input class="qty-input" type="number" min="1" value="0" step="1">
+                    <input class="qty-input2" type="number">
                 </div>
                 <div class="edit-price">
                     <div>Giá</div>
-                    <input class="qty-input" type="number" min="500000" value="1000000" step="1000000">
+                    <input class="price-input2" type="number" min="500000" value="1000000" step="1000000">
                 </div>
                 <div class="edit-sales">
                     <div>Giảm giá</div>
-                    <input class="qty-input" type="number" min="1" value="0" step="1">
+                    <input class="discount-input2" type="number" min="1" value="0" step="1">
                 </div>
             </div>
             <div class="edit-img-input">
                 <div>Hình ảnh  <span class="required">*</span></div>
-                <input type="text">
+                <input class="img-input" type="text">
+                <p class="message3"></p>
             </div>
             <div class="product-details">
                 <div>Chi tiết sản phẩm</div>
-                <input type="text">
+                <input class="detail-input" type="text">
             </div>
             <div class="line-textInput"></div>
 
             <div class="btn-cancel-save">
-                <button>Huỷ</button>
-                <button>Thêm</button>
+                <button onclick="closeUpdate()" >Huỷ</button>
+                <button onclick="handleUpdateProduct()">Lưu</button>
             </div>
     </div>
 
-
+<script src="../JS/product-manager.js"></script>
 </body>
 </html>

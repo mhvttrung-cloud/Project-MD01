@@ -45,7 +45,7 @@
             <div class="container-content">
                 <div class="menu-content">
                     <h2>Danh mục</h2>
-                    <button>Thêm mới danh mục</button>
+                    <button class="create-btn">Thêm mới danh mục</button>
                 </div>
                 <div class="search-bar">
                     <select class="option">
@@ -53,7 +53,7 @@
                         <option value="Đang hoạt động">Đang hoạt động</option>
                         <option value="Ngừng hoạt động">Ngừng hoạt động</option>
                     </select>
-                    <input type="search" placeholder="Tìm kiếm danh mục theo tên" />
+                    <input oninput="hanleSearch(event)" type="search" placeholder="Tìm kiếm danh mục theo tên" />
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 
@@ -68,7 +68,7 @@
                                 <th class="function2">Chức năng</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="tbody-tr-push">
                             <tr class="content-bowel">
                                 <td>DM001</td>
                                 <td>Quần áo</td>
@@ -162,8 +162,12 @@
         </div>
     </nav>
 
-    <!-- Box model <> Sửa - Xoá -->
-     <div class="box-none">
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+
+<!-- Box model <> Sửa - Xoá -->
+    <div class="box-none">
         <div class="box-none-container">
             <img src="../IMG/icon/Featured icon.png" alt="!">
             <div class="box-none-para">
@@ -174,8 +178,8 @@
             <div class="line"></div>
 
             <div class="box-none-btn">
-                <button class="delete-cancel cancel">Huỷ</button>
-                <button class="delete-cancel delete">Xoá</button>
+                <button class="cancel">Huỷ</button>
+                <button class="delete">Xoá</button>
             </div>
         </div>
      </div>
@@ -187,7 +191,7 @@
                 <img src="../IMG/icon/Subtract.png" alt="checked">
                 <p>Thành công</p>
             </div>
-            <button><img src="../IMG/icon/_BaseCloseButton.png" alt="out X"></button>
+            <button><i class="fa-solid fa-circle-xmark"></i></button>
             <p>Xoá sản phẩm thành công</p>
         </div>
     </div>
@@ -198,31 +202,32 @@
             <h3>Thêm mới danh mục</h3>
             <div class="code-input">
                 <label for="add-code">Mã danh mục <span class="required">*</span></label>
-                <input type="text" >
+                <input class="code-create" type="text" >
+                <p class="message"></p>
             </div>
             <div class="code-input">
                 <label for="add-name">Tên danh mục  <span class="required">*</span></label>
-                <input type="text">
+                <input class="name-create" type="text">
+                <p class="message"></p>
             </div>
+
             <div class="add-choose">
                 <p>Trạng thái</p>
-                <label class="radio-circle">
-                    <input type="radio" name="status" checked>
-                    <span class="circle"></span>
-                    <span class="text">Đang hoạt động</span>
+               <label class="radio-circle">
+                    <input type="radio" name="status" value="ACTIVE" checked>
+                    Đang hoạt động
                 </label>
 
                 <label class="radio-circle">
-                    <input type="radio" name="status">
-                    <span class="circle"></span>
-                    <span class="text">Ngừng hoạt động</span>
+                    <input type="radio" name="status" value="INACTIVE">
+                    Ngừng hoạt động
                 </label>
 
                 <div class="line-textInput"></div>
 
                 <div class="btn-cancel-save">
-                    <button>Huỷ</button>
-                    <button>Thêm</button>
+                    <button class="cancel-create">Huỷ</button>
+                    <button class="save-create">Thêm</button>
                 </div>
             </div>
         </div>
@@ -234,30 +239,31 @@
             <h3>Cập nhật danh mục</h3>
             <div class="update-input">
                 <label for="update-code">Mã danh mục <span class="required">*</span></label>
-                <input type="text" >
+                <input class="code-update" type="text" >
+                <p class="message"></p>
             </div>
             <div class="update-input">
                 <label for="add-name">Tên danh mục <span class="required">*</span></label>
-                <input type="text">
+                <input class="name-update" type="text">
+                <p class="message"></p>
             </div>
             <div class="update-choose">
                 <p>Trạng thái</p>
                 <label class="radio-edit">
                     <input type="radio" name="status" checked>
-                    <span class="update"></span>
-                    <span class="text">Đang hoạt động</span>
+                    <span class="text-edit">Đang hoạt động</span>
                 </label>
 
                 <label class="radio-edit">
                     <input type="radio" name="status">
                     <span class="update"></span>
-                    <span class="text">Ngừng hoạt động</span>
+                    <span class="text-edit">Ngừng hoạt động</span>
                 </label>
-
+                <p class="message2"></p>
                 <div class="line-textInput"></div>
                 <div class="cancel-save">
-                    <button>Huỷ</button>
-                    <button>Lưu</button>
+                    <button class="cancel-edit">Huỷ</button>
+                    <button onclick="handleEdit()" class="save-edit">Lưu</button>
                 </div>
             </div>
         </div>
@@ -269,6 +275,6 @@
 
 
     <!-- Xoá thành công -->
-
+     <script src="../JS/category-manager.js"></script>
 </body>
 </html>

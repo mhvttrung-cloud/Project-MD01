@@ -85,20 +85,16 @@ function handleLogin(){
         return;
     };
     //Lấy giá trị từ localStorage ra
-    const userLocal = JSON.parse(localStorage.getItem("users")) || [];
+    const userLocal = JSON.parse(localStorage.getItem("user")) || [];
 
-    const userFind = userLocal.find(function(user, index){
-       return user.email === email && user.password === password; 
-    });
-
-    if (userFind){
+    if (userLocal){
         //Trước khi cho phép đăng nhập thành công "Cần lưu"
-        localStorage.setItem("userLongIn", JSON.stringify(userFind))
+        localStorage.setItem("userLongIn", JSON.stringify(userLocal))
 
         message.innerHTML = "Đăng nhập thành công";
         message.style.color = "green";
 
-        window.location.href = "../dashboard.html";
+        window.location.href = "../pages/dashboard.html";
 
     } else {
         message.innerHTML = "Email hoặc Mật khẩu không đúng";

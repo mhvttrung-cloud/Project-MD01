@@ -14,7 +14,7 @@
             <p>Đăng ký tài khoản để sử dụng dịch vụ</p>
         </div>
 <!-- Form input -->
-        <form id="form" action="#" method="post">
+        <form id="form" onsubmit="event.preventDefault()">
 
             <div class="form-div-userName">
                 <div class="form-div form-div-mobile">
@@ -53,11 +53,13 @@
                 </span>
                 <p class="message"></p>
             </div>
-            <button onclick="hanldRegister(event)" class="button">Đăng ký</button>
+            <button type="button" onclick="hanldRegister(event)" class="button">Đăng ký</button>
 
             <span class="acount-ques">Bạn đã có tài khoản? <a class="onlick-href" href="../pages/login.html">Đăng nhập</a></span>
         </form>
     </div>
-    <script src="../JS/register.js"></script>
+    <script src="../JS/register.js">
+
+    </script>
 </body>
 </html>

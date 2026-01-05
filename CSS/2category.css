@@ -273,309 +273,225 @@ td  {
 
 
 /*  */
+/* Nền mờ phía sau modal */
 .modal-overlay {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    display: none;
-
-    justify-content: center;
-    align-items: center;
+    inset: 0; /* top right bottom left = 0 */
+    background: rgba(0, 0, 0, 0.45);
     z-index: 999;
-}
 
-.modal-overlay.active {
-    display: flex;
-}
-
-.modal {
+    /* Ẩn mặc định */
     display: none;
+}
+/* Modal container */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 420px;
     background: #fff;
     border-radius: 8px;
+    padding: 24px;
+
+    z-index: 1000;
+
+    /* Ẩn mặc định */
+    display: none;
+}
+.modal h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
-.modal.active {
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label,
+.form-group p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 6px;
+    border: 1px solid #d0d5dd;
+    outline: none;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #4f46e5;
+}
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+.form-group input[type="radio"] {
+    accent-color: #4f46e5;
+}
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+#cancelCreateBtn {
+    background: #f2f4f7;
+}
+
+.form-actions button[type="submit"] {
+    background: #4f46e5;
+    color: #fff;
+}
+.form-message {
+    color: red;
+    font-size: 13px;
+    min-height: 18px;
+}
+.modal.show,
+.modal-overlay.show {
     display: block;
 }
 
 
-
-/* box-none */
+/*  */
 .box-none {
     position: fixed;
-    display: none;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
+    display: none;
+}
+
+.box-none.show {
+    display: block;
 }
 .box-none-container {
-    display: flex;
-    flex-direction: column;
-    /*  */
-    width: 500px;
-    height: 268px;
-    border-radius: 8px;
-    padding: 24px;
-    margin: 500px auto;
-    background-color: #FFFFFF;
-    gap: 24px;
+    text-align: center;
 }
 
 .box-none-container img {
-    height: 48px;
     width: 48px;
-    border-radius: 28px;
-    border: 8px;
-}
-.box-none-para p {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 28px;
-    color: #101828;
-}
-.box-none-para span {
-    height: 24px;
-    font-weight: 400;
-    font-size: 14px;
-}
-.box-none-para span b {
-    font-weight: 600;
-}
-.box-none-para {
-    color: #667085;
+    margin-bottom: 12px;
 }
 
+.box-none-para p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.box-none-para span {
+    font-size: 14px;
+    color: #667085;
+}
 .line {
     height: 1px;
-    width: 458px;
-    background-color: #B0BABF;
+    background: #e4e7ec;
+    margin: 20px 0;
 }
 .box-none-btn {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     gap: 12px;
 }
-.box-none-btn button {
-    width: 60px;
-    height: 40px;
-    border-radius: 8px;
-    border: 1px solid #D0D5DD;
+
+.delete-cancel {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
 }
-.cancel {
-    background-color: transparent;
+
+.delete-cancel.cancel {
+    background: #f2f4f7;
 }
-.delete {
-    background-color: #D92D20;
-    border: 1px solid #D92D20;
-    color: #FFFFFF;
+
+.delete-cancel.delete {
+    background: #d92d20;
+    color: #fff;
 }
 
 
-/* Notify */
+/*  */
 
 .notify {
-    background-color: #344054B2;
     position: fixed;
-    z-index: 1000;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    height: 100%;
+    top: 20px;
+    right: 20px;
 
+    width: 300px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    z-index: 1100;
     display: none;
-    justify-content: flex-end;
+}
+
+.notify.show {
+    display: block;
 }
 .notify-delete {
-    height: 91px;
-    width: 450px;
-    background-color: #333E5A;
-    padding: 16px;
-    border-radius: 16px;
-    position: relative;
-    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
+
 .notify-detele-parent {
     display: flex;
+    align-items: center;
     gap: 8px;
 }
 
-.notify-delete button {
-    width: 24px;
-    height: 24px;
-    border: none;
-    border-radius: 50%;
+.notify-detele-parent img {
+    width: 20px;
+}
+
+.notify-detele-parent p {
+    font-weight: 600;
+    font-size: 14px;
+}
+.notify button {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.notify-delete-parent p {
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 32px;
+.notify p:last-child {
+    font-size: 13px;
+    color: #667085;
 }
-.notify-delete p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
-    color: #FFFFFF;
-}
-
-
-
-/* Thêm mới danh mục */
-
-.push-code-container {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background: #fff;
-    z-index: 1000;
-    width: 652px;
-}
-.push-code {
-    padding: 24px;
-}
-.push-code h3 {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 24px;
-    color: #000000;
-    margin-bottom: 24px;
-}
-.code-input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-    width: 100%;
-    gap: 8px;
-}
-.required {
-    color: #B91C1C;
-}
-.code-input input {
-    height: 44px;
-    width: 100%;
-}
-
-.add-choose p {
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #344054;
-}
-
-.radio-circle {
-    margin-right: 26px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
-}
-
-.line-textInput {
-    height: 1px;
-    width: 100%;
-    background-color: #A1A1AA;
-    margin-bottom: 24px;
-    margin-top: 24px;
-}
-.btn-cancel-save {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-    width: 100%;
-}
-
-.btn-cancel-save button {
-    height: 44px;
-    width: 72px;
-    background-color: transparent;
-    color: #18181B;
-    border: 1px solid #E4E4E7;
-    border-radius: 8px;
-}
-
-.btn-cancel-save button:nth-child(2) {
-    background-color: #007AFF;
-    border-radius: 10px;
-    width: 86px;
-    color: #FFFFFF;
-}
-
-
-
-/* Edit danh mục */
-
-.update-code-container {
-    display: none;
-    position: fixed;
-}
-.update-code {
-    padding: 24px;
-}
-.update-code h3 {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 24px;
-    color: #000000;
-    margin-bottom: 24px;
-}
-.update-input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-    width: 652px;
-    gap: 8px;
-}
-.update-input input {
-    height: 44px;
-    width: 100%;
-}
-
-.update-choose p {
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #344054;
-}
-.radio-edit {
-    margin-right: 26px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 100%;
-}
-
-
-.cancel-save {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-    width: 652px;
-}
-.cancel-save button {
-    height: 44px;
-    width: 72px;
-    background-color: transparent;
-    color: #18181B;
-    border: 1px solid #E4E4E7;
-    border-radius: 8px;
-}
-.cancel-save button:nth-child(2) {
-    background-color: #007AFF;
-    border-radius: 10px;
-    width: 70px;
-    color: #FFFFFF;
-}
-
-
-
-

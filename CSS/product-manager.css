@@ -272,13 +272,22 @@ td  {
     border-radius: 4px;
 }
 
+.modal-overlay.active {
+    display: flex;
+    background-color: #000000;
+}
 
 /* Thêm mới sản phẩm */
 .update-parent {
+    position: fixed;
     display: none;
     padding: 24px;
     height: 615px;
     width: 852px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #667085;
 }
 .update-parent h3 {
     font-size: 20px;
@@ -286,6 +295,7 @@ td  {
     line-height: 24px;
     color: #000000;
     margin-bottom: 12px;
+    background-color: #FFFFFF;
 }
 
 .update-child {
@@ -385,10 +395,15 @@ td  {
 
 /* Cập nhật sản phẩm */
 .edit-parent {
+    position: fixed;
     display: none;
     padding: 24px;
     height: 615px;
     width: 852px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
 }
 .edit-parent h3 {
     font-size: 20px;
@@ -396,6 +411,7 @@ td  {
     line-height: 24px;
     color: #000000;
     margin-bottom: 12px;
+    
 }
 
 .edit-child {

@@ -19,18 +19,18 @@
                 <a href="#">Ecommerce</a>
             </div>
             <div class="item-container">
-                <div class="menu-item">
+                <a class="menu-item" href="../pages/dashboard.html">
                     <img src="../IMG/icon/home-img.png" alt="Thống kê">
-                    <a href="#">Thống kê</a>
-                </div>
-                <div class="menu-item">
+                    <span>Thống kê</span>
+                </a>
+                <a class="menu-item" href="../pages/category-manager.html">
                     <img src="../IMG/icon/cash2.png" alt="Danh mục">
-                    <a href="../pages/category-manager.html">Danh mục</a>
-                </div>
-                <div class="menu-item">
+                    <span>Danh mục</span>
+                </a>
+                <a class="menu-item" href="#">
                     <img src="../IMG/icon/thu-muc.png" alt="Thư mục">
-                    <a href="#">Sản phẩm</a>
-                </div>
+                    <span>Sản phẩm</span>
+                </a>
             </div>
         </div>
         <!-- Header  TOP & RIGHT ALL-->
@@ -63,7 +63,7 @@
                         <option value="INACTIVE">Ngừng hoạt động</option>
                     </select>
                     <input  oninput="handleSearch(event)"  type="search" placeholder="Tìm kiếm danh mục theo tên" />
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button onchange="renderScreen()"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 
             <!-- Content -->
@@ -200,10 +200,10 @@
             </div>
         </div>
     </nav>
-<div class="modal-overlay"></div>
+<div class="modal-overlay">
 
     <!-- CREATE Thêm mới sản phẩn -->
-    <div class="update-parent">
+    <form class="update-parent">
         <h3>Thêm mới sản phẩm</h3>
         <div class="update-child">
             <div class="update-code-product">
@@ -221,7 +221,7 @@
         <div class="update-child">
             <div class="update-code-product">
                 <span>Danh mục <span class="required">*</span></span>
-                <select class="update-option">
+                <select class="update-option" name="???">
                     <option value="Điện thoại">Điện thoại</option>
                     <option value="Máy tính">Máy tính</option>
                 </select>
@@ -230,13 +230,11 @@
                     <p>Trạng thái</p>
                     <label class="radio-update">
                         <input class="text checked" type="radio" name="status" value="ACTIVE">
-                        <span class="update"></span>
                         <span >Đang hoạt động</span>
                     </label>
 
                     <label class="radio-update">
                         <input class="text checked" type="radio" name="status" value="INACTIVE">
-                        <span class="update"></span>
                         <span>Ngừng hoạt động</span>
                     </label>
                 </div>
@@ -268,11 +266,11 @@
             <div class="line-textInput"></div>
 
             <div class="btn-cancel-save">
-                <button type="button">Huỷ</button>
+                <button onclick="closeCreate()" type="button">Huỷ</button>
                 <button type="button" onclick="handleCreate(event)">Thêm</button>
             </div>
-    </div>
-
+    </form>
+</div>
 
     <!--EDIT Cập nhật sản phẩm -->
     <div class="edit-parent">
@@ -343,6 +341,36 @@
                 <button onclick="closeUpdate()" >Huỷ</button>
                 <button onclick="handleUpdateProduct()">Lưu</button>
             </div>
+    </div>
+    <!-- Box model <> Sửa - Xoá -->
+        <div class="box-none">
+            <div class="box-none-container">
+                <img src="../IMG/icon/Featured icon.png" alt="!">
+                <div class="box-none-para">
+                    <p>Xác nhận</p>
+                    <span>Bạn có chắc chắn muốn xóa sản phẩm <b>Táo đỏ</b> khỏi hệ thống không?</span>
+                </div>
+                
+                <div class="line"></div>
+
+                <div class="box-none-btn">
+                    <button onclick="cancelClear()" class="cancel">Huỷ</button>
+                    <button onclick="handleDelete(index)" class="delete">Xoá</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notify -->
+        <div class="notify">
+            <div class="notify-delete">
+                <div class="notify-detele-parent">
+                    <img src="../IMG/icon/Subtract.png" alt="checked">
+                    <p>Thành công</p>
+                </div>
+                <button><i class="fa-solid fa-circle-xmark"></i></button>
+                <p>Xoá sản phẩm thành công</p>
+            </div>
+        </div>
     </div>
 
 <script src="../JS/product-manager.js"></script>

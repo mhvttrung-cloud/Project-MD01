@@ -1,153 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý danh mục</title>
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../CSS/2category.css">
-    <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
-</head>
-<body>
-       <nav id="container">
-        <!-- Example side navigation  LEFT-->
-        <div id="div-left">
-            <div class="menu-logo">
-                <img srcset="../IMG/Vector.png" alt="">
-                <a href="#">Ecommerce</a>
-            </div>
-            <div class="item-container">
-                <div class="menu-item">
-                    <img src="../IMG/icon/home-img.png" alt="Thống kê">
-                    <a href="../pages/dashboard.html">Thống kê</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../IMG/icon/cash2.png" alt="Danh mục">
-                    <a href="../pages/category-manager.html">Danh mục</a>
-                </div>
-                <div class="menu-item">
-                    <img src="../IMG/icon/thu-muc.png" alt="Thư mục">
-                    <a href="../pages/product-manager.html">Sản phẩm</a>
-                </div>
-            </div>
-        </div>
-        <!-- Header  TOP & RIGHT ALL-->
-        <div class="div-rigth">
-            <div class="header">
-                <i class="fa-solid fa-bell"></i>
-                <img src="../IMG/10d5c319419f2137bf8772f28aaf576b74a68518.png" alt="avatar">
-            </div>
-        <!-- Search bar -->
-            <div class="container-content">
-                <div class="menu-content">
-                    <h2>Danh mục</h2>
-                    <button class="create-btn">Thêm mới danh mục</button>
-                </div>
-                <div class="search-bar">
-                    <select class="option">
-                        <option value="Tất cả">Tất cả</option>
-                        <option value="Đang hoạt động">Đang hoạt động</option>
-                        <option value="Ngừng hoạt động">Ngừng hoạt động</option>
-                    </select>
-                    <input type="search" placeholder="Tìm kiếm danh mục theo tên" />
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <menu id="menu-component" class="menu">
+        <!-- Bây giờ trong HTML không cần có code fix cứng nữa, nó sẽ được load từ JS -->
+      </menu>
+      <div class="main">
+        <header class="header">
+          <span>Icon</span>
+          <span>Ảnh đại diện</span>
+        </header>
+        <main class="main-content">
+          <!-- Phần toolbar -->
+          <div class="toolbar">
+            <h3 class="title">Danh mục</h3>
+            <button onclick="handleShowModal()" class="button-add">
+              Thêm mới danh mục
+            </button>
+          </div>
 
-    <!--  -->
-     <!-- Content -->
-                <div class="content">
-                    <table>
-                        <thead>
-                            <tr class="content-menu">
-                                <th class="number">Mã danh mục <i class="fa-solid fa-arrow-down"></i></th>
-                                <th class="category-name">Tên danh mục <i class="fa-solid fa-arrow-down"></i></th>
-                                <th class="status">Trạng thái</th>
-                                <th class="function2">Chức năng</th>
-                            </tr>
-                        </thead>
-                        <tbody class="category-tbody">
-                        </tbody>
+          <!-- Phần chức năng -->
+          <div class="function">
+            <select name="" id="">
+                <option value="">Tất cả</option>
+              <option value="">Đang hoạt động</option>
+              <option value="">Ngừng hoạt động</option>
+            </select>
+            <input type="search" />
+          </div>
 
+          <!-- Phần danh sách -->
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Mã danh mục</th>
+                <th>Tên danh mục</th>
+                <th>Trạng thái</th>
+                <th>Chức năng</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
 
-<div id="modalOverlay" class="modal-overlay"></div>
-
-<!-- Create -->
-<div id="createCategoryModal" class="modal">
-    <form id="createCategoryForm">
-        <h3>Thêm mới danh mục</h3>
-
-        <div class="form-group">
-            <label>Mã danh mục *</label>
-            <input class="code-category" type="text" name="code" />
-        </div>
-
-        <div class="form-group">
-            <label>Tên danh mục *</label>
-            <input class="name-category" type="text" name="name" />
-        </div>
-
-        <div class="form-group">
-            <p>Trạng thái *</p>
-            <label>
-                <input type="radio" name="status" value="ACTIVE" />
-                Đang hoạt động
-            </label>
-            <label>
-                <input type="radio" name="status" value="INACTIVE" />
-                Ngừng hoạt động
-            </label>
-        </div>
-
-        <p class="form-message"></p>
-
-        <div class="form-actions">
-            <button type="button" id="cancelCreateBtn">Huỷ</button>
-            <button onclick="hanleUpdate()" type="submit">Thêm</button>
-        </div>
-    </form>
-</div>
-
-
-
-
-
-
-
-
-
-<!-- Box model <> Sửa - Xoá -->
-    <div class="box-none">
-        <div class="box-none-container">
-            <img src="../IMG/icon/Featured icon.png" alt="!">
-            <div class="box-none-para">
-                <p>Xác nhận</p>
-                <span>Bạn có chắc chắn muốn xóa sản phẩm <b>Táo đỏ</b> khỏi hệ thống không?</span>
-            </div>
-            
-            <div class="line"></div>
-
-            <div class="box-none-btn">
-                <button class="delete-cancel cancel">Huỷ</button>
-                <button class="delete-cancel delete">Xoá</button>
-            </div>
-        </div>
-     </div>
-
-     <!-- Notify -->
-    <div class="notify">
-        <div class="notify-delete">
-            <div class="notify-detele-parent">
-                <img src="../IMG/icon/Subtract.png" alt="checked">
-                <p>Thành công</p>
-            </div>
-            <button><img src="../IMG/icon/_BaseCloseButton.png" alt="out X"></button>
-            <p>Xoá sản phẩm thành công</p>
-        </div>
+          <!-- Phần phân trang -->
+          <div>
+            <button>Prev</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Next</button>
+          </div>
+        </main>
+      </div>
     </div>
 
-    <script src="../JS/2category.js"></script>
+    <!-- Modal thêm mới, cập nhật danh mục -->
+    <div class="overlay" style="display: none" id="form-add-category">
+      <form class="form" onsubmit="handleSubmit(event)">
+        <div class="form-header">
+          <h3 class="form-title">Thêm mới danh mục</h3>
+          <button onclick="handleCloseModal()" type="button" class="btn-close">
+            X
+          </button>
+        </div>
+        <div class="form-body">
+          <div class="form-group">
+            <label class="form-label" for="">Mã danh mục</label>
+            <input id="category-code" class="fomr-input" type="text" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tên danh mục</label>
+            <input id="category-name" class="fomr-input" type="text" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Trạng thái</label>
+            <input checked value="active" name="status" type="radio" /> Đang
+            hoạt động
+            <input value="inactive" name="status" type="radio" /> Ngừng hoạt
+            động
+          </div>
+        </div>
+        <div class="form-footer">
+          <button type="button" onclick="handleCloseModal()" class="btn">
+            Hủy
+          </button>
+          <button class="btn">Thêm</button>
+        </div>
+      </form>
+    </div>
 
-          
-</body>
+    <!-- Modal xác nhận xóa -->
+
+    <!-- Script -->
+    <script src="../JS/ultil.js"></script>
+    <script src="../js/category-manager.js"></script>
+
+    <!-- Gán phàn chuỗi HTML vào component -->
+    <script>
+      document.querySelector("#menu-component").innerHTML =
+        renderMenu("category-manager");
+    </script>
+  </body>
 </html>

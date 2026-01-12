@@ -156,8 +156,8 @@
     }
  
 function saveProducts(){
-    localStorage.setItem("products", JSON.stringify(products));
-}
+        localStorage.setItem("products", JSON.stringify(products));
+    }
 function loadProducts(){
     const data = localStorage.getItem(products);
     if (data){
@@ -166,6 +166,8 @@ function loadProducts(){
 };
 
 
+let modalOverley = document.querySelector(".modal-overlay");
+let clearScreen = document.querySelector(".box-none");
 
 let deleteIndex = document.querySelector(".delete-index");
 let editIndex = document.querySelector(".edit-index");
@@ -195,28 +197,53 @@ function displayUser(){
         productList.appendChild(row);
     });
 }; 
-saveProducts();
 loadProducts();
+saveProducts();
 displayUser();
 
 
 //DELETE
-function handleDelete(index){
-    products.splice(index, 1);
+               
+let indexDelete = null;
+let boxNone= document.querySelector(".box-none");
+
+function handleDelete(index) {
+    indexDelete = index;
+    boxNone.style.display = "block";
+}
+
+boxNone.addEventListener("click", function () {
+    products.splice(indexDelete, 1);
     saveProducts();
     displayUser(products);
-}
+    boxNone.style.display = "none";
+    document.querySelector(".notify").style.display = "flex";
+    setTimeout(function(){
+        document.querySelector(".notify").style.display = "none"
+    }, 2000);
+});
+
+    // let noClearOnlyOne = products.some(function(stock){
+    //     stock.products.stock === products.stock;
+    //     if (noClearOnlyOne){
+    //         alert("Bạn không thể xoá");
+    //         return;
+    //     }
+    // })
+document.querySelector(".cancel").addEventListener("click", function () {
+    boxNone.style.display = "none";
+});
+
 
 //UPDATE
 
 function handleEdit(index){
     editIndex = index;
-    // let status = document.querySelector('input[name="status"]:checked').value;
     
     const product = products[index];
     console.log(products[index]);
     document.querySelector(".edit-parent").style.display = "block";
-
+    document.querySelector(".modal-overlay").style.display = "block";
 
     document.querySelector(".edit-code").value = product.product_code;
     document.querySelector(".edit-name").value = product.product_name;
@@ -241,7 +268,7 @@ function handleEdit(index){
 
 
 function handleUpdateProduct(){
-        debugger;
+        // debugger;
     if (editIndex === null)
         return;
 
@@ -256,13 +283,13 @@ function handleUpdateProduct(){
 
     // Kiểm tra định dạng ảnh
     
-    // let imgUrl = document.querySelector(".img-input").value.trim();
-    // let message = document.querySelector(".message3")
-    // if (!isValidImageUrl(imgUrl)) {
-    //     message.innerHTML = "Định dạng ảnh không hợp lệ";
-    //     message.style.color = "red";
-    //     return;
-    // };
+    let imgUrl = document.querySelector(".img-input").value.trim();
+    let message = document.querySelector(".message3")
+    if (!isValidImageUrl(imgUrl)) {
+        message.innerHTML = "Định dạng ảnh không hợp lệ";
+        message.style.color = "red";
+        return;
+    };
 
     products[editIndex].product_code = document.querySelector(".edit-code").value;
     products[editIndex].product_name = document.querySelector(".edit-name").value;
@@ -279,29 +306,30 @@ function handleUpdateProduct(){
     loadProducts();
     displayUser(products);
     closeUpdate();
-
+    
 };
 function closeUpdate(){
     document.querySelector(".edit-parent").style.display = "none";
+    document.querySelector(".modal-overlay").style.display = "none";    
     editIndex = null;
 }
 
 //kiểm tra LINK dán
 
-// function isValidImageUrl(url){
-//     const e = url.split(".")
+function isValidImageUrl(url){
+    const e = url.split(".")
 
-//     const last = e[e.length-1];
+    const last = e[e.length-1];
 
-//     const urlImage = [
-//         "PNG", "JPG", "WebP"
-//     ];
-//     for (let i = 0; i <= urlImage; i++){
-//         if (last.toLowerCase() == i.toLowerCase()){
-//             return true;
-//         }
-//     } return false; 
-// }
+    const urlImage = [
+        "PNG", "JPG", "WebP"
+    ];
+    for (let i = 0; i <= urlImage; i++){
+        if (last.toLowerCase() == i.toLowerCase()){
+            return true;
+        }
+    } return false; 
+}
 
 //Thêm mới CREATE
 
@@ -309,6 +337,8 @@ document.querySelector(".menu-content button").addEventListener("click", createP
 
 function createProduct(){
     document.querySelector(".update-parent").style.display = "block";
+    
+    document.querySelector(".modal-overlay").style.display = "block";
 }
 function handleCreate(event){
     event.preventDefault();
@@ -323,7 +353,6 @@ function handleCreate(event){
     
 
     //Kiểm tra qua TÊN VÀ MÃ có trùng lặp hay không !
-    // codeName();
     
     if (codeInput && nameInput && qtyInput && priceInput && discountInput && imageLinkInput){
         products.unshift({
@@ -337,23 +366,26 @@ function handleCreate(event){
         });
         loadProducts();
         displayUser();
-        document.querySelector(".update-parent").style.display = "none";
     } else {
         const message = document.querySelector(".message");
         message.innerHTML = "Vui lòng nhập lại";
         message.style.color = "red";
     };
+    closeCreate();
 };
-
+function closeCreate() {
+    document.querySelector(".update-parent").style.display = "none";
+    document.querySelector(".modal-overlay").style.display = "none";
+}
 
 
 //Tên // mã sản phẩm không được giống nhau
 //  dùng for => if kiểm tra products
 function codeName(khac){
     code = products.product_code.toLowerCase();
-    name = products.product_name.toLowerCase();
+    nameP = products.product_name.toLowerCase();
 
-    if (code !== name) {
+    if (code !== nameP) {
         return;
     } else {
         message.innerHTML = "Vui lòng nhập lại MÃ DANH SÁCH & TÊN DANH SÁCH"
@@ -365,13 +397,25 @@ function codeName(khac){
 //Nên quy về value mình quy định !
 // Kiểm tra lại toàn bộ HTML để tối ưu cho JS
 //SEARCH
-
 function handleSearch(event){
+    // debugger;
 
     const search = event.target.value.toLowerCase();
+    //Nếu không có search thì giữ nguyên !
+    if (!search){
+        displayUser(products);
+        return;
+    }
+};
+// Vì sao đến đoạn naỳ không thể lọc được nhỉ ?
+//     const result = products.filter(function(a){
+//     return (a.product_name.toLowerCase().includes(search) || a.status.toLowerCase().includes(search) || String(a.price).toLowerCase().includes(search));
+// });
+//     displayUser(result);
 
-    const result = products.filter(function(a){
-        return a.product_name.toLowerCase().includes(search) || a.status.toLowerCase().includes(search) || Number(a.price).toLowerCase().includes(search);
-    })
-    displayUser(result)
-}
+    //Tìm kiếm trạng thái !!!
+
+
+
+
+

@@ -45,6 +45,10 @@
     flex-direction: row;
     gap: 8px;
     border-radius: 1px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: #3F3F46;
 }
 .menu-item:hover {
     background-color: #D7EDFF;
@@ -55,13 +59,6 @@
     height: 24px;
     width: 24px;
     margin-bottom: 8px;
-}
-
-.menu-item a {
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 24px;
-    color: #3F3F46;
 }
 
 /* TOP - RIGHT */
@@ -151,8 +148,18 @@
     padding: 12px 50px 12px 16px;
     position: relative;
 }
-.search-bar i {
+.search-bar button {
+    background-color: transparent;
+    color: none;
+    border: none;
     position: absolute;
+    height: 16px;
+    width: 16px;
+    top: 12px;
+    right: 36px;
+    color: rgba(100, 116, 139, 1);
+}
+.search-bar button i {
     height: 16px;
     width: 16px;
     top: 12px;
@@ -272,22 +279,36 @@ td  {
     border-radius: 4px;
 }
 
-.modal-overlay.active {
-    display: flex;
-    background-color: #000000;
+
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;  
+    z-index: 9; 
+    content: "";
 }
+
 
 /* Thêm mới sản phẩm */
 .update-parent {
     position: fixed;
     display: none;
     padding: 24px;
-    height: 615px;
-    width: 852px;
+    width: 892px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #667085;
+    background-color: #F6F8F9;
+    border-radius: 10px;
+    z-index: 999;
 }
 .update-parent h3 {
     font-size: 20px;
@@ -346,6 +367,11 @@ td  {
     margin-bottom: 24px;
     margin-top: 8px;
 }
+.update-choose label span:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .update-img-input input , .product-details input { 
     padding: 12px 16px 11px 16px;
     height: 44px;
@@ -398,12 +424,12 @@ td  {
     position: fixed;
     display: none;
     padding: 24px;
-    height: 615px;
-    width: 852px;
+    width: 892px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #FFFFFF;
+    z-index: 999;
 }
 .edit-parent h3 {
     font-size: 20px;
@@ -445,8 +471,6 @@ td  {
     margin-top: 8px;
 }
 
-.edit-name {
-}
 .edit-choose p , .edit-quantity, .edit-price, .edit-sales , .edit-img-input , .product-details {
     font-size: 16px;
     font-weight: 600;
@@ -506,5 +530,132 @@ td  {
     background-color: #007AFF;
     border: 1px;
     width: 86px;
+    color: #FFFFFF;
+}
+
+
+.box-none {
+    position: fixed;
+    display: none;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.box-none-container {
+    display: flex;
+    flex-direction: column;
+    /*  */
+    width: 500px;
+    height: 268px;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 500px auto;
+    background-color: #FFFFFF;
+    gap: 24px;
+}
+
+.box-none-container img {
+    height: 48px;
+    width: 48px;
+    border-radius: 28px;
+    border: 8px;
+}
+.box-none-para p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #101828;
+}
+.box-none-para span {
+    height: 24px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.box-none-para span b {
+    font-weight: 600;
+}
+.box-none-para {
+    color: #667085;
+}
+
+.line {
+    height: 1px;
+    width: 458px;
+    background-color: #B0BABF;
+}
+.box-none-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+.box-none-btn button {
+    width: 60px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+}
+.cancel {
+    background-color: transparent;
+}
+.delete {
+    background-color: #D92D20;
+    border: 1px solid #D92D20;
+    color: #FFFFFF;
+}
+
+
+/* Notify */
+
+.notify {
+    background-color: #344054B2;
+    position: fixed;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    justify-content: flex-end;
+}
+.notify-delete {
+    height: 91px;
+    width: 450px;
+    background-color: #333E5A;
+    padding: 16px;
+    border-radius: 16px;
+    position: relative;
+    margin-bottom: 12px;
+}
+.notify-detele-parent {
+    display: flex;
+    gap: 8px;
+}
+
+.notify-delete button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.notify-delete-parent p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 32px;
+}
+.notify-delete p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
     color: #FFFFFF;
 }

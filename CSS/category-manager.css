@@ -1,3 +1,8 @@
+:root {
+    --background-white: "#ffffff"
+}
+
+
 #container {
     display: flex;
     align-items: flex-start;
@@ -15,7 +20,6 @@
     height: 40px;
     width: 152px;
     margin : 14px;
-    /*  */
 }
 .menu-logo i {
     transform: rotateY(180deg);
@@ -43,9 +47,13 @@
 .menu-item {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 8px;
     border-radius: 1px;
+    text-decoration: none;
+    color: rgba(63, 63, 70, 1);
 }
+
 .menu-item:hover {
     background-color: #D7EDFF;
     border-radius: 6px;
@@ -155,7 +163,7 @@
 
 table {
     width: 100%;
-    border-collapse: separate; /* giữ border */
+    border-collapse: separate;
     border-spacing: 0;
     table-layout: fixed;
 }
@@ -209,6 +217,13 @@ td  {
     border-bottom: 1px;
 }
 
+.tbody tr td button {
+    background : transparent;
+    border : none;
+    cursor : pointer;
+}
+
+
 .icon-right {
     height: 40px;
     width: 40px;
@@ -216,16 +231,6 @@ td  {
 .icon-content {
     height: 40px;
     width: 40px;
-}
-.icon-content-button {
-    background-color: transparent;
-    border: none;
-}
-
-.button button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 }
 
 
@@ -274,36 +279,26 @@ td  {
 
 /*  */
 .modal-overlay {
+    display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    display: none;
-
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.modal-overlay.active {
-    display: flex;
-}
-
-.modal {
-    display: none;
-    background: #fff;
-    border-radius: 8px;
-}
-
-.modal.active {
-    display: block;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;  
+    z-index: 9; 
+    content: "";
 }
 
 
 
 /* box-none */
 .box-none {
-    position: fixed;
     display: none;
+    position: fixed;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -380,7 +375,7 @@ td  {
 .notify {
     background-color: #344054B2;
     position: fixed;
-    z-index: 1000;
+    z-index: 999;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
@@ -439,7 +434,7 @@ td  {
     transform: translate(-50%, -50%);
     width: 400px;
     background: #fff;
-    z-index: 1000;
+    z-index: 999;
     width: 652px;
 }
 .push-code {
@@ -465,6 +460,8 @@ td  {
 .code-input input {
     height: 44px;
     width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(208, 213, 221, 1);
 }
 
 .add-choose p {
@@ -518,6 +515,14 @@ td  {
 .update-code-container {
     display: none;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: #fff;
+    z-index: 999;
+    width: 652px;
+    border-radius: 10px;
 }
 .update-code {
     padding: 24px;
@@ -533,7 +538,6 @@ td  {
     display: flex;
     flex-direction: column;
     margin-bottom: 24px;
-    width: 652px;
     gap: 8px;
 }
 .update-input input {
@@ -559,7 +563,6 @@ td  {
     display: flex;
     justify-content: flex-end;
     gap: 8px;
-    width: 652px;
 }
 .cancel-save button {
     height: 44px;

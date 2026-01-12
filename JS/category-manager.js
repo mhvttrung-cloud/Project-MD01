@@ -1,23 +1,70 @@
-
-
 let categories = [
     {
-        id : 1,
-        category_code : "DM001",
-        category_name : "Hoa quả",
-        image : "https://example.com/image.jpg",
-        status : "ACTIVE",
-        created_at : "2021-01-01T00:00:00Z",
+        id: 1,
+        category_code: "DM001",
+        category_name: "Quần áo",
+        image: "",
+        status: "ACTIVE",
+        created_at: "2021-01-01T00:00:00Z",
     },
     {
-        id : 2,
-        category_code : "DM002",
-        category_name : "Rau củ",
-        image : "https://example.com/image.jpg",
-        status : "INACTIVE",
-        created_at : "2021-01-01T00:00:00Z",
+        id: 2,
+        category_code: "DM002",
+        category_name: "Kính mắt",
+        image: "",
+        status: "INACTIVE",
+        created_at: "2021-01-01T00:00:00Z",
     },
+    {
+        id: 3,
+        category_code: "DM003",
+        category_name: "Giày dép",
+        image: "",
+        status: "ACTIVE",
+        created_at: "2021-01-01T00:00:00Z",
+    },
+    {
+        id: 4,
+        category_code: "DM004",
+        category_name: "Thời trang nam",
+        image: "",
+        status: "INACTIVE",
+        created_at: "2021-01-01T00:00:00Z",
+    },
+    {
+        id: 5,
+        category_code: "DM005",
+        category_name: "Thời trang nữ",
+        image: "",
+        status: "INACTIVE",
+        created_at: "2021-01-01T00:00:00Z",
+    },
+    {
+        id: 6,
+        category_code: "DM006",
+        category_name: "Hoa quả",
+        image: "",
+        status: "INACTIVE",
+        created_at: "2021-01-01T00:00:00Z",
+    },
+    {
+        id: 7,
+        category_code: "DM007",
+        category_name: "Rau",
+        image: "",
+        status: "ACTIVE",
+        created_at: "2021-01-01T00:00:00Z",
+    },
+    {
+        id: 8,
+        category_code: "DM008",
+        category_name: "Điện thoại",
+        image: "",
+        status: "INACTIVE",
+        created_at: "2021-01-01T00:00:00Z",
+    }
 ];
+
 
 const active =[
     {
@@ -68,12 +115,14 @@ function renderCategory(list){
         <button style="
             background : transparent;
             border : none;
+            cursor : pointer;
         "
         onclick="deleteIndex(${index})"><img class="icon-content" src="../IMG/icon/Button.png" alt="transh"></button>
         
         <button style="
             background : transparent;
             border : none;
+            cursor : pointer;
         "
         onclick="openEdit(${index})"><img class="icon-content" src="../IMG/icon/Button (1).png" alt="pen"></button>
         </td>
@@ -81,55 +130,72 @@ function renderCategory(list){
         tbody.appendChild(rowTd);
     });
 };
+loadCategories();
 saveCategories();
 renderCategory(categories);
 
 //create
 let createBtn = document.querySelector(".create-btn");
-let addScreen = document.querySelector(".push-code-container");
+let addScreen = document.querySelector(".push-code-container")
 let modalOverlay = document.querySelector(".modal-overlay");
 
-createBtn.addEventListener("click", function(){
-    addScreen.style.display = "block";
-    modalOverlay.style.display = "block";
-});
-
 function closeModalOverlay (){
-    document.querySelector(".update-code-container").style.display = "none";
+    document.querySelector(".push-code-container").style.display = "none";
     addScreen.style.display = "none";
     modalOverlay.style.display = "none";
 }
+function openCreate(){
+    addScreen.style.display = "block";
+    modalOverlay.style.display = "block";
+}
 
-let saveCreate = document.querySelector(".save-create");
-saveCreate.addEventListener("click", function(){
-    let codeInput = document.querySelector(".code-create").value;
-    const nameInput = document.querySelector(".name-create").value;
-    const statusChecked = document.querySelector('input[name="status"]:checked');
+
+function inputCreate(){
     
-    const message = document.querySelector(".message");
+    openCreate();
+    let codeInput = document.querySelector(".code-create").value.trim();
+    let nameInput = document.querySelector(".name-create").value;
+    let statusChecked = document.querySelector('input[name=status]:checked');
 
-    message.innerHTML = "";
+    let message1 = document.querySelector(".message1");
+    let message2 = document.querySelector(".message2");
+    let message3 = document.querySelector(".message3");
+    message1.innerHTML = "";
+    message2.innerHTML = "";
+    message3.innerHTML = "";
 
-    if (!codeInput ||!nameInput || !statusChecked){
-        message.innerHTML = "Vui lòng nhập lại"
+
+    if(!codeInput){
+        message1.innerHTML = "Mã danh mục không được để trống"
+        message1.style.color = "red"
+        return;
+    };
+    
+    if (codeInput === nameInput){
+        message3.innerHTML = "Vui lòng nhập lại Mã và Tên"
+        message3.style.color = "red"
+        return;
+    };
+    
+    if (!nameInput){
+        message2.innerHTML = "Tên danh mục không được để trống"
+        message2.style.color = "red"
         return;
     }
-    const status = statusChecked.value;
-
-    categories.unshift({
-        category_code : codeInput,
-        category_name : nameInput,
-        status : status,
-
-    })
-    saveCategories();
-    loadCategories();
+    categories.unshift(
+        {
+            category_name : nameInput,
+            category_code : codeInput,
+            status : statusChecked.value,
+        }
+    )
+    saveCategories()
     renderCategory(categories);
     closeModalOverlay();
-// Sau khi thêm mới lại không thể lưu trên màn hình nhỉ ? F5 => mất ????
-    // restart thẻ form !!!
-    document.querySelector(".push-code-container").reset();
-});
+    document.querySelector("form").reset();
+};
+
+
 
 //Delete
 function deleteIndex(index){
@@ -140,38 +206,45 @@ function deleteIndex(index){
 loadCategories();
 renderCategory(categories);
 
-//edit tbody Mắc kẹt ở edit =(( WHY))
 
+
+//Edit
 
 let editIndex = null;
 function openEdit(index){
     
     editIndex = index;
-    
     const ab = categories[index];
+
+    document.querySelector(".update-code-container").style.display = "block";
+    document.querySelector(".modal-overlay").style.display = "block"
     
     document.querySelector(".code-update").value = ab.category_code;
     document.querySelector(".name-update").value = ab.category_name;
-    
-    const radio = document.querySelectorAll('input[name="status"]:checked').value;
-    radio.forEach(function(jp){
-        jp.checked = (radio.value === ab.status)
-    });
-    document.querySelector(".update-code-container").style.display = "flex";
+
+    let radios = document.querySelectorAll('input[name="status"]');
+        radios.forEach(function(radio){
+        radio.checked = ab.status == radio.value
+    })
 }
 
 function handleEdit(){
-    if (editIndex === null) return;
+    if (editIndex === null) 
+        return;
+    
+    let message = document.querySelector(".message4");
+    message.innerHTML = "";
 
     const codeUpdate = document.querySelector(".code-update").value.trim();
     const nameUpdate = document.querySelector(".name-update").value.trim();
-    const statusRadio = document.querySelector('input[name="status"]:checked');
+    let statusRadio = document.querySelectorAll('input[name="status"]:checked').value;
+   
 
     if (!codeUpdate || !nameUpdate || !statusRadio){
-        alert("Hãy nhập đầy đủ dữ liệu");
+        message.innerHTML = "Vui lòng check lại trạng thái !"
+        message.style.color = "red"
         return;
     }
-
 
 //Sử dụng ...categories[editIndex] để copy lặp lại trường
 //categories[editIndex].category_code = codeUpdate

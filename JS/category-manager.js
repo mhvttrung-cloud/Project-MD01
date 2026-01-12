@@ -198,13 +198,30 @@ function inputCreate(){
 
 
 //Delete
-function deleteIndex(index){
-    categories.splice(index, 1);
+let indexDelete = null;
+let boxNone= document.querySelector(".box-none");
+
+function deleteIndex(index) {
+    indexDelete = index;
+    boxNone.style.display = "block";
+}
+document.querySelector(".delete-box-none").addEventListener("click", function () {
+    categories.splice(indexDelete, 1);
+
     saveCategories();
     renderCategory(categories);
-};
-loadCategories();
-renderCategory(categories);
+
+    document.querySelector(".notify").style.display = "flex";
+    
+    boxNone.style.display = "none";
+    setTimeout(function(){
+        document.querySelector(".notify").style.display = "none"
+    }, 2000);
+});
+
+    document.querySelector(".cancel").addEventListener("click", function () {
+    boxNone.style.display = "none";
+    });
 
 
 
@@ -222,9 +239,9 @@ function openEdit(index){
     document.querySelector(".code-update").value = ab.category_code;
     document.querySelector(".name-update").value = ab.category_name;
 
-    let radios = document.querySelectorAll('input[name="status"]');
+    let radios = document.querySelectorAll('input[name="status-edit"]');
         radios.forEach(function(radio){
-        radio.checked = ab.status == radio.value
+        radio.checked = (ab.status == radio.value);
     })
 }
 
@@ -237,8 +254,9 @@ function handleEdit(){
 
     const codeUpdate = document.querySelector(".code-update").value.trim();
     const nameUpdate = document.querySelector(".name-update").value.trim();
-    let statusRadio = document.querySelectorAll('input[name="status"]:checked').value;
-   
+    debugger;
+    let statusRadio = document.querySelector('input[name="status-edit"]:checked');
+
 
     if (!codeUpdate || !nameUpdate || !statusRadio){
         message.innerHTML = "Vui lòng check lại trạng thái !"
@@ -255,6 +273,7 @@ function handleEdit(){
         category_name: nameUpdate,
         status: statusRadio.value,
     };
+
     saveCategories();
     renderCategory(categories);
 
@@ -262,3 +281,45 @@ function handleEdit(){
     editIndex = null;
 }
 
+// Tên || mã sản phẩm không được giống nhau
+//  dùng for => if kiểm tra products
+
+// function codeName(codeInput, nameInput){
+//     code = categories.product_code.toLowerCase();
+//     nameP = categories.product_name.toLowerCase();
+//     let message4 = document.querySelector(".message4");
+
+//     for (let i = 0; i < categories.length; i++){
+//         if (categories[i].category_code.trim().toLowerCase()||categories[i].category_name.trim().toLowerCase()){
+//             message4.innerHTML = "Vui lòng nhập lại Mã và Tên"
+//             message4.style.color = "red"
+//             return;
+//         }
+//     };  return;
+// } 
+//Vẫn chưa chạy được thay thế bằng hàm IF ở trên !!!
+
+
+//Search
+
+function handleSearch(event){
+    const search = document.querySelector('input[type="search"]').value.toLowerCase().trim();
+    const status = document.querySelector(".option").value;
+
+    let result = categories;
+
+    if (search){
+        result = result.filter(function(item){
+           return item.category_code.toLowerCase().includes(search) || item.category_name.toLowerCase().includes(search);
+        });
+    }
+
+    if (status !== "Tất cả"){
+        result = result.filter(function(item){
+          return  item.status === status;
+        })
+    }
+
+    renderCategory(result);
+}
+//Lỗi hay gặp do không để TÊN sự kiện giống nhau

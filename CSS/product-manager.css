@@ -601,7 +601,7 @@ td  {
 .cancel {
     background-color: transparent;
 }
-.delete {
+.delete-box-none {
     background-color: #D92D20;
     border: 1px solid #D92D20;
     color: #FFFFFF;

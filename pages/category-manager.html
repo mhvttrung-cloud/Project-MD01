@@ -48,12 +48,12 @@
                     <button onclick="openCreate()" class="create-btn">Thêm mới danh mục</button>
                 </div>
                 <div class="search-bar">
-                    <select class="option">
+                    <select class="option" onchange="handleSearch(event)">
                         <option value="Tất cả">Tất cả</option>
-                        <option value="">Đang hoạt động</option>
-                        <option value="">Ngừng hoạt động</option>
+                        <option value="ACTIVE">Đang hoạt động</option>
+                        <option value="INACTIVE">Ngừng hoạt động</option>
                     </select>
-                    <input oninput="hanleSearch(event)" type="search" placeholder="Tìm kiếm danh mục theo tên" />
+                    <input oninput="handleSearch(event)" type="search" placeholder="Tìm kiếm danh mục theo tên" />
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 
@@ -162,40 +162,7 @@
         </div>
     </nav>
 
-
-    <div class="modal-overlay" id="modalOverlay">
-<!-- Box model <> Sửa - Xoá -->
-        <div class="box-none">
-            <div class="box-none-container">
-                <img src="../IMG/icon/Featured icon.png" alt="!">
-                <div class="box-none-para">
-                    <p>Xác nhận</p>
-                    <span>Bạn có chắc chắn muốn xóa sản phẩm <b>Táo đỏ</b> khỏi hệ thống không?</span>
-                </div>
-                
-                <div class="line"></div>
-
-                <div class="box-none-btn">
-                    <button class="cancel">Huỷ</button>
-                    <button class="delete">Xoá</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Notify -->
-        <div class="notify">
-            <div class="notify-delete">
-                <div class="notify-detele-parent">
-                    <img src="../IMG/icon/Subtract.png" alt="checked">
-                    <p>Thành công</p>
-                </div>
-                <button><i class="fa-solid fa-circle-xmark"></i></button>
-                <p>Xoá sản phẩm thành công</p>
-            </div>
-        </div>
-    </div>
-
-
+    <div class="modal-overlay" id="modalOverlay"></div>
     <!-- Thêm mới danh mục -->
         <form class="push-code-container">
             <div class="push-code">
@@ -250,12 +217,12 @@
                 <div class="update-choose">
                     <p>Trạng thái</p>
                     <label class="radio-edit">
-                        <input type="radio" name="status" checked>
+                        <input type="radio" name="status-edit" value="ACTIVE" checked>
                         Đang hoạt động
                     </label>
 
                     <label class="radio-edit">
-                        <input type="radio" name="status">
+                        <input type="radio" name="status-edit" value="INACTIVE">
                         Ngừng hoạt động
                     </label>
                     <p class="message4"></p>
@@ -270,16 +237,41 @@
  </div>
 
     <!-- Xác nhận xoá -->
+<!-- Box model <> Sửa - Xoá -->
+        <div class="box-none">
+            <div class="box-none-container">
+                <img src="../IMG/icon/Featured icon.png" alt="!">
+                <div class="box-none-para">
+                    <p>Xác nhận</p>
+                    <span>Bạn có chắc chắn muốn xóa sản phẩm khỏi hệ thống không?</span>
+                </div>
+                
+                <div class="line"></div>
 
+                <div class="box-none-btn">
+                    <button class="cancel">Huỷ</button>
+                    <button class="delete-box-none">Xoá</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notify -->
+        <div class="notify">
+            <div class="notify-delete">
+                <div class="notify-detele-parent">
+                    <img src="../IMG/icon/Subtract.png" alt="checked">
+                    <p>Thành công</p>
+                </div>
+                <button><i class="fa-solid fa-circle-xmark"></i></button>
+                <p>Xoá sản phẩm thành công</p>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Xoá thành công -->
      <script src="../JS/category-manager.js"></script>
 
 
-
-
-     <!-- Đập đi xây lại hết toàn bộ !!!! Cố gắng lắm xong trước thứ 5-->
-      <!-- Làm buổi tối !!!! -->
 </body>
 </html>

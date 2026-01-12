@@ -289,7 +289,7 @@ td  {
     left: 0;
     right: 0;
     bottom: 0;  
-    z-index: 9; 
+    z-index: 1; 
     content: "";
 }
 
@@ -302,7 +302,7 @@ td  {
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000;
+    z-index: 999;
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
 }
@@ -363,7 +363,7 @@ td  {
 .cancel {
     background-color: transparent;
 }
-.delete {
+.delete-box-none {
     background-color: #D92D20;
     border: 1px solid #D92D20;
     color: #FFFFFF;

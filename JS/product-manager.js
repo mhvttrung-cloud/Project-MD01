@@ -212,27 +212,23 @@ function handleDelete(index) {
     boxNone.style.display = "block";
 }
 
-boxNone.addEventListener("click", function () {
+document.querySelector(".delete-box-none").addEventListener("click", function () {
     products.splice(indexDelete, 1);
+
     saveProducts();
     displayUser(products);
-    boxNone.style.display = "none";
+
     document.querySelector(".notify").style.display = "flex";
+    
+    boxNone.style.display = "none";
     setTimeout(function(){
         document.querySelector(".notify").style.display = "none"
     }, 2000);
 });
 
-    // let noClearOnlyOne = products.some(function(stock){
-    //     stock.products.stock === products.stock;
-    //     if (noClearOnlyOne){
-    //         alert("Bạn không thể xoá");
-    //         return;
-    //     }
-    // })
-document.querySelector(".cancel").addEventListener("click", function () {
+    document.querySelector(".cancel").addEventListener("click", function () {
     boxNone.style.display = "none";
-});
+    });
 
 
 //UPDATE
@@ -352,7 +348,6 @@ function handleCreate(event){
     const statusInput = document.querySelector(".checked").value;
     
 
-    //Kiểm tra qua TÊN VÀ MÃ có trùng lặp hay không !
     
     if (codeInput && nameInput && qtyInput && priceInput && discountInput && imageLinkInput){
         products.unshift({
@@ -364,6 +359,7 @@ function handleCreate(event){
             image : imageLinkInput,
             status : statusInput ? "ACTIVE" : "INACTIVE"
         });
+
         loadProducts();
         displayUser();
     } else {
